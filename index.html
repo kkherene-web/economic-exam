@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Economic English - Proctored 2-Minute Quiz</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 740px;
+      margin: 24px auto;
+      padding: 16px;
+      background: #f1f5f9;
+      color: #1e293b;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    input, select {
+      user-select: text;
+      -webkit-user-select: text;
+    }
+    /* Top Blue Gradient Banner */
+    .banner {
+      background: linear-gradient(135deg, #2b2d9c 0%, #3730a3 55%, #4338ca 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 28px 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(43, 45, 156, 0.22);
+      margin-bottom: 20px;
+    }
+    .banner-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #e0e7ff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .banner h1 {
+      margin: 0 0 8px 0;
+      font-size: 1.65rem;
+      font-weight: 800;
+    }
+    .banner p {
+      margin: 0;
+      color: #c7d2fe;
+      font-size: 0.9rem;
+    }
+
+    /* Card Container */
+    .card {
+      background: #ffffff;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .reg-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+    .reg-subtitle {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin: 0 0 20px 0;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 560px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group { display: flex; flex-direction: column; }
+    label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+    }
+    .req { color: #dc2626; }
+    input[type="text"], select {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 0.95rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #0f172a;
+      outline: none;
+    }
+    input[type="text"]:focus, select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+    }
+    input.input-error, select.input-error {
+      border-color: #dc2626;
+      background: #fef2f2;
+    }
+    .error-msg {
+      color: #dc2626;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 8px;
+      display: none;
+    }
+
+    /* Camera Box */
+    .camera-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .video-wrap {
+      position: relative;
+      width: 240px;
+      height: 180px;
+      margin: 10px auto;
+      background: #0f172a;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #94a3b8;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+    .cam-status {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #475569;
+      margin-top: 6px;
+    }
+    .cam-status.ok { color: #16a34a; }
+    .cam-status.err { color: #dc2626; }
+
+    /* Yellow Instructions Box */
+    .instructions-box {
+      background: #fefce8;
+      border: 1px solid #fde047;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 18px 0 20px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .warn-icon { font-size: 1.2rem; line-height: 1.3; }
+    .instructions-content {
+      font-size: 0.85rem;
+      color: #713f12;
+      line-height: 1.55;
+    }
+    .instructions-content strong.title {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: #854d0e;
+    }
+    .instructions-content ul { margin: 0; padding-left: 18px; }
+
+    /* Buttons */
+    .btn-primary {
+      width: 100%;
+      padding: 14px 20px;
+      background: #1d63dc;
+      color: #ffffff;
+      font-size: 1.02rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #1e40af; }
+    .btn-primary:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+    .btn-cam {
+      padding: 9px 16px;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+    .btn-cam:hover { background: #334155; }
+
+    /* Quiz Screen */
+    .student-bar {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.84rem;
+      color: #475569;
+      margin-bottom: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .proctor-pill {
+      background: #fee2e2;
+      color: #b91c1c;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .progress-text { font-weight: 700; color: #334155; font-size: 0.98rem; }
+    .timer {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 5px 13px;
+      border-radius: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .timer.warning {
+      animation: pulse 1s infinite;
+      background: #dc2626;
+      color: #ffffff;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.75; }
+    }
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #1d63dc;
+      width: 0%;
+      transition: width 0.25s ease;
+    }
+    .question-text {
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.55;
+      min-height: 80px;
+      margin-bottom: 24px;
+    }
+    .tf-group { display: flex; gap: 14px; }
+    .btn-tf {
+      flex: 1;
+      padding: 15px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn-true { background: #1d63dc; color: #ffffff; }
+    .btn-true:hover { background: #1e40af; }
+    .btn-false { background: #475569; color: #ffffff; }
+    .btn-false:hover { background: #334155; }
+
+    /* Security Warning Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .modal-box {
+      background: #ffffff;
+      max-width: 440px;
+      width: 100%;
+      padding: 26px;
+      border-radius: 14px;
+      text-align: center;
+      border-top: 6px solid #dc2626;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+    .modal-box h3 {
+      color: #dc2626;
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+    }
+    .modal-box p {
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    /* Result Screen */
+    .hidden { display: none !important; }
+    .result-summary {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .student-receipt {
+      font-size: 0.9rem;
+      color: #334155;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .score-big { font-size: 2.3rem; font-weight: 800; color: #0f172a; }
+    .sync-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .sync-badge.success { background: #dcfce7; color: #15803d; }
+    .sync-badge.fail { background: #fee2e2; color: #b91c1c; }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+    .photo-strip img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+    .review-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e293b;
+      margin: 22px 0 12px 0;
+    }
+    .review-item {
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #f8fafc;
+      border-left: 4px solid #cbd5e1;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .review-item.is-correct { border-left-color: #16a34a; }
+    .review-item.is-wrong { border-left-color: #dc2626; background: #fef2f2; }
+    .correct { color: #16a34a; font-weight: 700; }
+    .wrong { color: #dc2626; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="banner">
+    <div class="banner-badge">Proctored Assessment &bull; 400-Question Bank</div>
+    <h1>General Economic English - 2-Minute Quiz</h1>
+    <p>Topics: Microeconomics, Macroeconomics, Markets, Production, Money, Banking &amp; Inflation</p>
+  </div>
+
+  <!-- STEP 1: STUDENT REGISTRATION & CAMERA AUTHORIZATION -->
+  <div class="card" id="start-screen">
+    <h2 class="reg-title">&#128100; Student Registration &amp; Camera Check</h2>
+    <p class="reg-subtitle">Enter your official details and enable your camera before starting the 2-minute secure exam.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="firstName">FIRST NAME / &#1575;&#1604;&#1575;&#1587;&#1605; <span class="req">*</span></label>
+        <input type="text" id="firstName" placeholder="e.g. Mohamed" autocomplete="given-name">
+      </div>
+      <div class="form-group">
+        <label for="lastName">LAST NAME / &#1575;&#1604;&#1604;&#1602;&#1576; <span class="req">*</span></label>
+        <input type="text" id="lastName" placeholder="e.g. Benali" autocomplete="family-name">
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="studentId">STUDENT ID / &#1585;&#1602;&#1605; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; <span class="req">*</span></label>
+        <input type="text" id="studentId" placeholder="e.g. 202639012345">
+      </div>
+      <div class="form-group">
+        <label for="studentGroup">GROUP / &#1575;&#1604;&#1601;&#1608;&#1580; <span class="req">*</span></label>
+        <select id="studentGroup">
+          <option value="">Select your Group...</option>
+          <option value="Group 06">Group 06</option>
+          <option value="Group 07">Group 07</option>
+          <option value="Group 08">Group 08</option>
+          <option value="Group 09">Group 09</option>
+          <option value="Group 10">Group 10</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- CAMERA AUTHORIZATION SECTION -->
+    <div class="camera-box">
+      <button type="button" class="btn-cam" id="btn-enable-cam" onclick="requestCamera()">&#128247; Authorize &amp; Enable Camera</button>
+      <div class="video-wrap">
+        <video id="webcam-video" autoplay playsinline muted></video>
+      </div>
+      <div class="cam-status" id="cam-status">Camera permission is required to start the exam.</div>
+    </div>
+
+    <div class="error-msg" id="form-error">Please complete all fields and authorize your camera before starting.</div>
+
+    <div class="instructions-box">
+      <div class="warn-icon">&#9888;&#65039;</div>
+      <div class="instructions-content">
+        <strong class="title">Strict Safe-Exam Rules:</strong>
+        <ul>
+          <li><strong>Time &amp; Questions:</strong> 2 minutes (120 seconds) for 20 random True/False questions.</li>
+          <li><strong>Camera Proctoring:</strong> 1 initial photo + 4 random photos will be taken during the 120 seconds and sent with your grade to Google Sheets.</li>
+          <li><strong>Full-Screen Lock:</strong> The exam opens in mandatory Full-Screen mode. Exiting full-screen, switching tabs, or copying/pasting triggers a warning—a second violation automatically closes and submits your exam.</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="btn-primary" id="btn-start-exam" onclick="validateAndStart()" disabled>Authorize Camera First to Start &rarr;</button>
+  </div>
+
+  <!-- STEP 2: TIMED SECURE QUIZ -->
+  <div class="card hidden" id="quiz-screen">
+    <div class="student-bar">
+      <span><strong>Student:</strong> <span id="display-name"></span> (<span id="display-group"></span>)</span>
+      <span class="proctor-pill">&#9679; PROCTORED &bull; FULL-SCREEN LOCK</span>
+    </div>
+
+    <div class="quiz-header">
+      <span class="progress-text" id="progress">Question 1 of 20</span>
+      <span class="timer" id="timer">02:00</span>
+    </div>
+
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-bar"></div>
+    </div>
+
+    <div class="question-text" id="question-text"></div>
+
+    <div class="tf-group">
+      <button class="btn-tf btn-true" onclick="submitAnswer(true)">True</button>
+      <button class="btn-tf btn-false" onclick="submitAnswer(false)">False</button>
+    </div>
+  </div>
+
+  <!-- SECURITY VIOLATION WARNING MODAL -->
+  <div class="modal-overlay hidden" id="warning-modal">
+    <div class="modal-box">
+      <h3>&#9888;&#65039; Security Warning (1 / 2)</h3>
+      <p id="warning-reason">You exited full-screen mode or attempted a restricted action (copy/paste/tab switch).<br><br><strong>If you do this again, your exam will be closed and submitted immediately!</strong></p>
+      <button class="btn-primary" onclick="resumeFullScreen()">Return to Full-Screen Exam</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: RESULT & SUBMISSION STATUS -->
+  <div class="card hidden" id="result-screen">
+    <h2 id="result-title" style="margin-top:0;">Exam Complete!</h2>
+
+    <div class="result-summary">
+      <div class="student-receipt" id="result-student-info"></div>
+      <div class="score-big"><span id="score">0</span> / 20</div>
+      <div id="score-percent" style="color: #64748b; margin-top: 4px; font-weight: 600;"></div>
+      <div class="sync-badge" id="sync-status">Sending results &amp; verification photos to Google Sheet...</div>
+      <div class="photo-strip" id="photo-strip"></div>
+    </div>
+
+    <div class="review-title">Question Review</div>
+    <div id="review-list"></div>
+  </div>
+
+  <!-- Hidden Canvas for Snapshot Capture -->
+  <canvas id="snap-canvas" width="240" height="180" class="hidden"></canvas>
+
+<script>
+  // =========================================================================
+  // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW
+  // =========================================================================
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHsWK9vVD8VL26gZHvwVX1R_DPuWlJHyPc8Nhq9Sp_IQAFSqdNx6X2Nqh7wipa0vJZvQ/exec";
+
+  // All 400 questions: [questionText, isTrue]
+  const questionBank = [["Economics is the study of how people use limited resources to make choices.", true], ["Scarcity means that resources are unlimited.", false], ["A consumer is a person who buys or uses goods and services.", true], ["A producer is a person who only buys goods.", false], ["English is only useful for reading, not for communication.", false], ["Microeconomics looks at the whole economy.", false], ["Macroeconomics studies inflation and unemployment.", true], ["The word \"economy\" is an adjective.", false], ["Economic is an adjective related to the economy.", true], ["Business focuses on producing and selling goods or services.", true], ["Management focuses on organizing people and resources.", true], ["An economic agent is a person or organization that makes economic decisions.", true], ["Households provide labour to firms and receive income.", true], ["Firms hire workers and pay wages to households.", true], ["The government collects taxes from households and firms.", true], ["Banks provide loans to households and firms.", true], ["Consumption is the production of goods.", false], ["Saving means keeping money for future use.", true], ["Investment is the use of money to buy capital goods.", true], ["The circular flow of income shows how money moves in the economy.", true], ["A need is something we want but do not require for survival.", false], ["Food, water, and shelter are basic needs.", true], ["A smartphone is a basic need.", false], ["Because of scarcity, we must make choices.", true], ["Opportunity cost is the value of the best alternative you give up.", true], ["Opportunity cost is always measured in money.", false], ["If you choose to study instead of working, your opportunity cost is the lost salary.", true], ["Rich countries do not face scarcity.", false], ["Every choice involves a trade-off.", true], ["Decision-making involves comparing costs and benefits.", true], ["Unlimited wants mean that people always want more goods and services.", true], ["Economics is mainly about managing unlimited resources.", false], ["Time is an example of a scarce resource.", true], ["A benefit is what you gain from a choice.", true], ["A cost is what you give up or pay.", true], ["The law of demand states that when price goes up, demand goes up.", false], ["The law of supply states that when price goes up, supply goes up.", true], ["Market equilibrium happens when supply equals demand.", true], ["A shortage happens when supply is greater than demand.", false], ["A surplus usually causes prices to go down.", true], ["Demand comes from producers.", false], ["Supply comes from sellers and producers.", true], ["If a product is very popular, its demand usually increases.", true], ["When there is a shortage, prices usually fall.", false], ["At equilibrium, there is no shortage and no surplus.", true], ["A buyer is a person who sells goods in the market.", false], ["Sellers want to make a profit.", true], ["Competition between sellers can help lower prices.", true], ["When people's income increases, demand for normal goods usually decreases.", false], ["A surplus means there are too many goods and not enough buyers.", true], ["In a free market, the government always decides the price of goods.", false], ["The demand curve usually slopes downward.", true], ["The supply curve usually slopes upward.", true], ["If a product is too expensive, most buyers will still buy it.", false], ["Prices in a market are influenced by both buyers and sellers.", true], ["Production is the process of making goods or providing services.", true], ["Land, labour, capital, and money are the four factors of production.", false], ["Labour refers to the human effort used in production.", true], ["Capital includes machines, tools, and buildings used in production.", true], ["Fixed costs change when the level of production changes.", false], ["Factory rent is an example of a fixed cost.", true], ["Raw materials are an example of a variable cost.", true], ["Total cost is the sum of fixed costs and variable costs.", true], ["Revenue is the money a business spends on production.", false], ["Profit is calculated as Revenue minus Costs.", true], ["If costs are higher than revenue, a business makes a profit.", false], ["Productivity measures how much output is produced per unit of input.", true], ["Using better technology can increase productivity.", true], ["Efficiency means producing goods while wasting many resources.", false], ["Enterprise (entrepreneurship) is the skill of organizing the other factors of production.", true], ["Higher productivity usually leads to higher costs per unit.", false], ["Money is considered a factor of production in economics.", false], ["Variable costs change with the quantity of goods produced.", true], ["A business that produces more goods with the same number of workers has increased its productivity.", true], ["The main goal of most businesses is to make a loss.", false], ["A firm is an organization that produces goods or provides services.", true], ["The main goal of most firms is to make a profit.", true], ["An entrepreneur is someone who starts a business and takes risks.", true], ["Entrepreneurship usually leads to fewer jobs in the economy.", false], ["SME stands for Small and Medium-sized Enterprise.", true], ["Start-ups are always very large companies.", false], ["A business plan describes the goals and strategy of a company.", true], ["Managers are responsible for planning work and organizing employees.", true], ["Shareholders own part of a company.", true], ["Innovation means doing things exactly the same way as before.", false], ["Innovation helps businesses compete and grow.", true], ["Business development is the process of growing a company.", true], ["Competitiveness is the ability of a firm to compete in the market.", true], ["Entrepreneurs do not take any risks when starting a business.", false], ["SMEs are important because they create many jobs.", true], ["A start-up is usually a new company, often in technology.", true], ["An enterprise is another word for a business or company.", true], ["Managers own part of the company and receive dividends.", false], ["Innovation can help a business grow and stay competitive.", true], ["Business development means reducing the company's activities.", false], ["A business plan is a written document describing a company's goals.", true], ["An elevator pitch is a long, detailed presentation about a business.", false], ["Market analysis explains who the customers are.", true], ["A good business plan should be clear, realistic, and well-written.", true], ["Good presentation skills help you convince investors to support your business.", true], ["A firm is an organization that produces goods or provides services.", true], ["The main goal of most firms is to make a profit.", true], ["An entrepreneur is someone who starts a business and takes risks.", true], ["Entrepreneurship usually leads to fewer jobs in the economy.", false], ["SME stands for Small and Medium-sized Enterprise.", true], ["Start-ups are always very large companies.", false], ["A business plan describes the goals and strategy of a company.", true], ["Managers are responsible for planning work and organizing employees.", true], ["Shareholders own part of a company.", true], ["Innovation means doing things exactly the same way as before.", false], ["Innovation helps businesses compete and grow.", true], ["Business development is the process of growing a company.", true], ["Competitiveness is the ability of a firm to compete in the market.", true], ["Entrepreneurs do not take any risks when starting a business.", false], ["SMEs are important because they create many jobs.", true], ["A start-up is usually a new company, often in technology.", true], ["An enterprise is another word for a business or company.", true], ["Managers own part of the company and receive dividends.", false], ["Innovation can help a business grow and stay competitive.", true], ["Business development means reducing the company's activities.", false], ["Money is used as a medium of exchange.", true], ["Money cannot be used as a store of value.", false], ["Commercial banks offer financial services to the public and businesses.", true], ["The central bank is often called the \"bank of the government.\"", true], ["A deposit is money borrowed from a bank.", false], ["A loan is money borrowed from a bank that must be paid back.", true], ["Interest is the extra money paid for borrowing money or earned from saving.", true], ["When interest rates go up, borrowing money becomes cheaper.", false], ["When interest rates go up, saving money becomes more attractive.", true], ["A borrower is a person or business that receives money and must pay it back.", true], ["A lender is a person who borrows money from the bank.", false], ["Credit allows people to buy goods now and pay for them later.", true], ["The central bank manages the country's money supply.", true], ["Commercial banks print the currency of a country.", false], ["People deposit money in a bank to keep it safe.", true], ["Saving means keeping money for future use.", true], ["Money is a unit of account used to measure the value of goods.", true], ["Credit cards are a common form of credit.", true], ["You must pay back a loan without any interest.", false], ["The Dinar is the currency of Algeria.", true], ["Inflation means that the general level of prices is increasing.", true], ["Inflation increases the purchasing power of money.", false], ["Purchasing power is the amount of goods and services that money can buy.", true], ["The Consumer Price Index (CPI) is used to measure inflation.", true], ["Unemployment means that people have jobs but do not want to work.", false], ["A job seeker is a person who is actively looking for work.", true], ["The labour market is where goods and services are sold.", false], ["A wage is usually paid per hour or per day.", true], ["A salary is a fixed amount of money paid every month.", true], ["When demand for labour is high, wages usually decrease.", false], ["During an economic crisis, unemployment usually increases.", true], ["High unemployment means that people have more money to spend.", false], ["Employment means having a paid job.", true], ["If prices go up but your salary stays the same, you can buy more goods.", false], ["Inflation can reduce the standard of living for people with fixed incomes.", true], ["Economic growth means that unemployment always increases.", false], ["Workers supply their labour in the labour market.", true], ["High wages always reduce the production costs for companies.", false], ["An economic crisis is a period of fast economic growth.", false], ["Governments try to reduce unemployment to improve living standards.", true], ["Inflation is when prices go down.", false], ["When inflation is high, the value of money decreases.", true], ["A person who is not working and not looking for a job is counted as unemployed.", false], ["The labour market is a place where employers look for workers.", true], ["Salaries are usually paid on an hourly basis.", false], ["Wages are usually paid on an hourly or daily basis.", true], ["If prices go up, your purchasing power goes down.", true], ["High inflation is good for people who save money in the bank.", false], ["The central bank controls interest rates in the country.", true], ["Commercial banks create the national currency.", false], ["A credit card is a form of a loan.", true], ["A savings account is a type of deposit.", true], ["Interest rates are the same in all banks.", false], ["Entrepreneurs create new businesses and jobs.", true], ["A business plan is only needed for large companies.", false], ["SMEs create a large number of jobs in the economy.", true], ["Shareholders receive part of the company's profits called dividends.", true], ["Innovation means copying another company's product.", false], ["A start-up usually tries to grow very quickly.", true], ["Managers and shareholders have the same role in a company.", false], ["Higher interest rates make it more expensive to borrow money.", true], ["Central banks aim to control inflation.", true], ["A deposit is money you take out of a bank.", false], ["Money is the only factor of production in a business.", false], ["A business plan includes market analysis and financial information.", true], ["Presenting a business plan is important to convince investors.", true], ["Inflation is measured by the CPI.", true], ["Unemployment can lead to lower living standards.", true], ["The labour market includes only factory workers.", false], ["Salaries are usually higher for jobs that require more skills.", true], ["Economic crises usually lead to higher unemployment.", true], ["The central bank is the bank for commercial banks.", true], ["A loan must be paid back with interest.", true], ["Lenders are people who borrow money.", false], ["Borrowers pay interest to lenders.", true], ["Inflation only affects poor people.", false], ["A job seeker is someone who has given up looking for work.", false], ["Wages are the price of labour in the labour market.", true], ["The economic crisis affects only one company.", false], ["The government can help reduce unemployment by supporting businesses.", true], ["Economics only studies how to make money.", false], ["Scarcity forces individuals and societies to make choices.", true], ["The opportunity cost of a choice is the value of the next best alternative.", true], ["In a free market, prices are determined by supply and demand.", true], ["A need is something you desire but do not necessarily need to survive.", false], ["Macroeconomics focuses on individual consumers and specific companies.", false], ["Microeconomics studies the economy as a whole.", false], ["The word \"economic\" is a noun.", false], ["A consumer is someone who makes goods and provides services.", false], ["Producers aim to satisfy consumer wants and needs.", true], ["The study of economics helps us understand how resources are allocated.", true], ["A trade-off means getting more of one thing and less of another.", true], ["When a government decides to build a hospital instead of a school, there is no opportunity cost.", false], ["Money is the only resource used in production.", false], ["If demand increases and supply stays the same, prices usually go up.", true], ["If supply increases and demand stays the same, prices usually go down.", true], ["Market equilibrium means buyers and sellers agree on a price.", true], ["A shortage happens when producers make too many goods.", false], ["A surplus happens when consumers want to buy more than what is available.", false], ["When a product is in high demand but low supply, the price tends to rise.", true], ["The law of demand states that price and quantity demanded move in the same direction.", false], ["The law of supply states that price and quantity supplied move in the same direction.", true], ["A market is any place where buyers and sellers interact.", true], ["In a market, sellers want to sell at the highest possible price.", true], ["Buyers want to buy at the lowest possible price.", true], ["Production is only about making physical goods, not services.", false], ["Capital includes tools, machines, and buildings.", true], ["Labour is the human effort used in production.", true], ["Land as a factor of production includes natural resources.", true], ["Enterprise (entrepreneurship) means organizing the other factors of production.", true], ["Fixed costs change when the company produces more goods.", false], ["Variable costs change with the level of production.", true], ["Total cost is the sum of fixed and variable costs.", true], ["Profit is the money a business pays to the government.", false], ["A business can survive in the long run if its costs are always higher than its revenue.", false], ["Productivity measures how much output is produced per worker.", true], ["Using new technology can increase productivity.", true], ["Efficiency means producing goods without wasting resources.", true], ["A firm is a type of household.", false], ["Firms hire workers and pay them wages.", true], ["An entrepreneur takes risks to start a business.", true], ["SMEs are large multinational companies.", false], ["Start-ups usually aim for rapid growth.", true], ["A business plan is a roadmap for a company's future.", true], ["Shareholders own part of a company.", true], ["Managers own the company and receive dividends.", false], ["Innovation means creating new products or methods.", true], ["Competitiveness is the ability to compete in the market.", true], ["A business plan is only useful for getting a bank loan.", false], ["An elevator pitch is a very short summary of a business idea.", true], ["Money is a medium of exchange.", true], ["Money is a store of value.", true], ["Money is a unit of account.", true], ["Barter is the exchange of goods without using money.", true], ["Commercial banks print the country's currency.", false], ["The central bank manages the country's money supply.", true], ["A deposit is money placed in a bank account.", true], ["A loan is money you borrow and must pay back.", true], ["Interest is the cost of borrowing money.", true], ["Savers receive interest from the bank.", true], ["Borrowers pay interest to the bank.", true], ["When interest rates rise, borrowing becomes more expensive.", true], ["When interest rates rise, saving becomes less attractive.", false], ["Credit allows you to buy now and pay later.", true], ["A lender is someone who gives money to a borrower.", true], ["A borrower is someone who receives money and must pay it back.", true], ["The central bank is often called the \"bank of banks\".", true], ["Commercial banks provide loans to individuals and businesses.", true], ["Inflation means prices are generally falling.", false], ["Inflation reduces the purchasing power of money.", true], ["If inflation is 5% and your salary increases by 2%, your real income decreases.", true], ["Inflation is measured by the Consumer Price Index (CPI).", true], ["Deflation means prices are generally falling.", true], ["High inflation is good for people on fixed incomes.", false], ["Unemployment means people do not have jobs but are actively looking.", true], ["A person who is not looking for a job is considered unemployed.", false], ["High unemployment means less spending in the economy.", true], ["The labour market is where workers and employers meet.", true], ["A wage is usually paid per month.", false], ["A salary is usually paid per month.", true], ["High demand for labour usually leads to higher wages.", true], ["High supply of labour usually leads to lower wages.", true], ["An economic crisis is a period of rapid economic growth.", false], ["During an economic crisis, unemployment usually rises.", true], ["Governments try to reduce unemployment to improve living standards.", true], ["A job seeker is a person who wants to work but cannot find a job.", true], ["Economics is a social science that studies human behavior.", true], ["Resources are unlimited in economics.", false], ["The basic economic problem is how to satisfy unlimited wants with limited resources.", true], ["A want is something necessary for survival.", false], ["Microeconomics studies individual markets and businesses.", true], ["Macroeconomics studies inflation, unemployment, and growth.", true], ["The word \"economy\" refers to the system of production and trade in a country.", true], ["\"Economics\" is the adjective form of economy.", false], ["\"Economic\" is the adjective form of economy.", true], ["Consumers buy goods and services to satisfy their wants.", true], ["Producers make goods and provide services to earn a profit.", true], ["Scarcity means that we can have everything we want.", false], ["Opportunity cost is the value of what you give up when you make a choice.", true], ["Every choice has an opportunity cost.", true], ["If you choose to watch TV instead of studying, the opportunity cost is the knowledge you missed.", true], ["Decision-making involves comparing benefits and costs.", true], ["A benefit is what you gain from a choice.", true], ["A cost is what you give up or pay.", true], ["Demand is the quantity of a good consumers are willing and able to buy.", true], ["Supply is the quantity of a good producers are willing to sell.", true], ["When price increases, quantity demanded decreases.", true], ["When price increases, quantity supplied increases.", true], ["Market equilibrium is when quantity demanded equals quantity supplied.", true], ["At equilibrium, there is a shortage.", false], ["At equilibrium, there is a surplus.", false], ["A shortage occurs when demand is greater than supply.", true], ["A surplus occurs when supply is greater than demand.", true], ["Shortages usually cause prices to fall.", false], ["Surpluses usually cause prices to rise.", false], ["The demand curve slopes downward.", true], ["The supply curve slopes upward.", true], ["Competition can help lower prices in a market.", true], ["A market is a physical place only; online markets do not count.", false], ["Production is the process of making goods and services.", true], ["The four factors of production are land, labour, capital, and enterprise.", true], ["Labour refers to machines used in production.", false], ["Capital includes machines, tools, and buildings.", true], ["Land includes natural resources like water and oil.", true], ["Enterprise refers to the skill of organizing the other factors of production.", true], ["Fixed costs change with the level of production.", false], ["Variable costs change with the level of production.", true], ["Rent is an example of a variable cost.", false], ["Raw materials are an example of a variable cost.", true], ["Total cost is the sum of fixed and variable costs.", true], ["Revenue is the total money received from sales.", true], ["Profit is revenue minus costs.", true], ["If costs are greater than revenue, a business makes a loss.", true], ["Productivity measures output per worker.", true], ["Training workers can increase productivity.", true], ["Efficiency means producing with maximum waste.", false], ["A firm produces goods or provides services to make a profit.", true], ["An entrepreneur takes risks to start a new business.", true], ["SMEs stand for Small and Medium-sized Enterprises.", true], ["A start-up is a very old and large company.", false], ["A business plan describes the company's goals and strategy.", true], ["Managers organize employees and plan work.", true], ["Shareholders receive dividends from the company's profits.", true], ["Innovation means inventing new products or methods.", true], ["Competitiveness is the ability of a firm to compete in the market.", true], ["Business development is the process of shrinking a company.", false], ["An elevator pitch is a short summary of a business idea.", true], ["Good presentation skills help convince investors.", true], ["A market analysis studies customers and competitors.", true], ["A financial plan shows the costs and expected revenue.", true], ["Money is a medium of exchange.", true], ["Money is a store of value.", true], ["Money is a unit of account.", true], ["Barter is the exchange of goods without using money.", true], ["Commercial banks print money.", false], ["The central bank controls the country's money supply.", true], ["A deposit is money placed in a bank.", true], ["A loan is money you borrow from a bank.", true], ["Interest is the extra money paid for borrowing.", true], ["Savers receive interest from the bank.", true], ["Borrowers pay interest to the bank.", true], ["Higher interest rates make borrowing more expensive.", true], ["Higher interest rates make saving less attractive.", false], ["Credit allows you to buy now and pay later.", true], ["A lender gives money to a borrower.", true], ["A borrower receives money and must pay it back.", true], ["The central bank is often called the bank of the government.", true], ["Commercial banks provide services to the public and businesses.", true], ["Inflation means prices are generally falling.", false], ["Inflation reduces purchasing power.", true], ["If inflation is 5% and your salary increases by 2%, your real income decreases.", true], ["The CPI is used to measure inflation.", true], ["Deflation means prices are generally falling.", true], ["High inflation is good for people with fixed incomes.", false], ["Unemployment means people have no jobs and are actively looking.", true], ["A person who is not looking for a job is considered unemployed.", false], ["High unemployment means less spending in the economy.", true], ["The labour market is where workers and employers meet.", true], ["A wage is usually paid per month.", false], ["A salary is usually paid per month.", true], ["High demand for labour usually leads to higher wages.", true], ["High supply of labour usually leads to lower wages.", true], ["An economic crisis is a period of rapid economic growth.", false], ["During an economic crisis, unemployment usually rises.", true], ["Governments try to reduce unemployment to improve living standards.", true], ["A job seeker is someone who is looking for work.", true], ["Economics studies how people use limited resources.", true], ["Resources are unlimited in economics.", false], ["The basic economic problem is unlimited wants and limited resources.", true], ["A want is necessary for survival.", false], ["Microeconomics studies individual markets.", true], ["Macroeconomics studies inflation and unemployment.", true], ["\"Economy\" refers to the system of production and trade in a country.", true], ["\"Economics\" is the adjective form of economy.", false], ["\"Economic\" is an adjective.", true], ["Consumers buy goods and services.", true], ["Producers make goods and provide services to earn a profit.", true], ["Scarcity means we can have everything we want.", false], ["Opportunity cost is the value of what you give up.", true], ["Every choice has an opportunity cost.", true]];
+
+  let studentInfo = { firstName: '', lastName: '', studentId: '', group: '' };
+  let mediaStream = null;
+  let cameraReady = false;
+  let capturedPhotos = []; // [initialPhoto, random1, random2, random3, random4]
+  let randomPhotoTimers = [];
+
+  let currentQuestions = [];
+  let currentIndex = 0;
+  let score = 0;
+  let userAnswers = [];
+  let timeLeft = 120;
+  let timerInterval = null;
+
+  let examActive = false;
+  let examEnded = false;
+  let violationCount = 0;
+  let terminationReason = "Completed Normally";
+
+  // 1. CAMERA AUTHORIZATION
+  async function requestCamera() {
+    const statusEl = document.getElementById('cam-status');
+    const videoEl = document.getElementById('webcam-video');
+    const startBtn = document.getElementById('btn-start-exam');
+
+    try {
+      mediaStream = await navigator.mediaDevices.getUserMedia({
+        video: { width: 320, height: 240, facingMode: "user" },
+        audio: false
+      });
+      videoEl.srcObject = mediaStream;
+      cameraReady = true;
+      statusEl.textContent = "Camera authorized and active!";
+      statusEl.className = "cam-status ok";
+      startBtn.disabled = false;
+      startBtn.innerHTML = "Start Timed Quiz Now &rarr;";
+      document.getElementById('btn-enable-cam').textContent = "Camera Ready";
+    } catch (err) {
+      cameraReady = false;
+      statusEl.textContent = "Camera access denied. You MUST allow camera access to take this exam.";
+      statusEl.className = "cam-status err";
+    }
+  }
+
+  function captureSnapshot(label) {
+    if (!mediaStream || !cameraReady) return;
+    const video = document.getElementById('webcam-video');
+    const canvas = document.getElementById('snap-canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // Compressed JPEG (quality 0.55) so 5 photos upload smoothly to Google Sheets
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.55);
+    capturedPhotos.push({
+      label: label,
+      time: new Date().toLocaleTimeString(),
+      image: dataUrl
+    });
+  }
+
+  function stopCamera() {
+    if (mediaStream) {
+      mediaStream.getTracks().forEach(track => track.stop());
+    }
+  }
+
+  // 2. VALIDATE REGISTRATION & ENTER FULL SCREEN
+  async function validateAndStart() {
+    const fnEl = document.getElementById('firstName');
+    const lnEl = document.getElementById('lastName');
+    const idEl = document.getElementById('studentId');
+    const grEl = document.getElementById('studentGroup');
+    const errEl = document.getElementById('form-error');
+
+    const firstName = fnEl.value.trim();
+    const lastName = lnEl.value.trim();
+    const studentId = idEl.value.trim();
+    const group = grEl.value.trim();
+
+    [fnEl, lnEl, idEl, grEl].forEach(el => el.classList.remove('input-error'));
+
+    let valid = true;
+    if (!firstName) { fnEl.classList.add('input-error'); valid = false; }
+    if (!lastName) { lnEl.classList.add('input-error'); valid = false; }
+    if (!studentId) { idEl.classList.add('input-error'); valid = false; }
+    if (!group) { grEl.classList.add('input-error'); valid = false; }
+
+    if (!valid || !cameraReady) {
+      errEl.style.display = 'block';
+      return;
+    }
+
+    errEl.style.display = 'none';
+    studentInfo = { firstName, lastName, studentId, group };
+
+    document.getElementById('display-name').textContent = `${firstName} ${lastName} (${studentId})`;
+    document.getElementById('display-group').textContent = group;
+
+    // Request Full Screen immediately on user click
+    try {
+      const docEl = document.documentElement;
+      if (docEl.requestFullscreen) {
+        await docEl.requestFullscreen();
+      } else if (docEl.webkitRequestFullscreen) {
+        await docEl.webkitRequestFullscreen();
+      }
+    } catch (e) {
+      console.warn("Fullscreen request blocked:", e);
+    }
+
+    startQuiz();
+  }
+
+  // 3. SHUFFLE & START QUIZ + SCHEDULE 4 RANDOM SNAPSHOTS
+  function getRandomQuestions(count) {
+    const copy = [...questionBank];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy.slice(0, count);
+  }
+
+  function scheduleRandomSnapshots() {
+    randomPhotoTimers.forEach(t => clearTimeout(t));
+    randomPhotoTimers = [];
+    // Pick 4 distinct random seconds between second 10 and second 115
+    const chosenSeconds = new Set();
+    while (chosenSeconds.size < 4) {
+      const randSec = Math.floor(Math.random() * 105) + 10;
+      chosenSeconds.add(randSec);
+    }
+    Array.from(chosenSeconds).sort((a, b) => a - b).forEach((sec, idx) => {
+      const t = setTimeout(() => {
+        if (examActive && !examEnded) {
+          captureSnapshot(`Random #${idx + 1} (${sec}s)`);
+        }
+      }, sec * 1000);
+      randomPhotoTimers.push(t);
+    });
+  }
+
+  function startQuiz() {
+    capturedPhotos = [];
+    captureSnapshot("Initial (0s)");
+    scheduleRandomSnapshots();
+
+    currentQuestions = getRandomQuestions(20);
+    currentIndex = 0;
+    score = 0;
+    userAnswers = [];
+    timeLeft = 120;
+    violationCount = 0;
+    examActive = true;
+    examEnded = false;
+
+    document.getElementById('start-screen').classList.add('hidden');
+    document.getElementById('result-screen').classList.add('hidden');
+    document.getElementById('quiz-screen').classList.remove('hidden');
+
+    const timerEl = document.getElementById('timer');
+    timerEl.classList.remove('warning');
+    updateTimerDisplay();
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimerDisplay();
+      if (timeLeft <= 15) {
+        timerEl.classList.add('warning');
+      }
+      if (timeLeft <= 0) {
+        terminationReason = "Time Expired (120s)";
+        endQuiz("Time's Up!");
+      }
+    }, 1000);
+
+    showQuestion();
+  }
+
+  function updateTimerDisplay() {
+    const mins = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+    const secs = String(timeLeft % 60).padStart(2, '0');
+    document.getElementById('timer').textContent = `${mins}:${secs}`;
+  }
+
+  function showQuestion() {
+    const [qText] = currentQuestions[currentIndex];
+    document.getElementById('progress').textContent = `Question ${currentIndex + 1} of 20`;
+    document.getElementById('progress-bar').style.width = `${(currentIndex / 20) * 100}%`;
+    document.getElementById('question-text').textContent = qText;
+  }
+
+  function submitAnswer(choice) {
+    if (!examActive || examEnded) return;
+    const [qText, correctAns] = currentQuestions[currentIndex];
+    const isCorrect = (choice === correctAns);
+    if (isCorrect) score++;
+
+    userAnswers.push({
+      question: qText,
+      chosen: choice,
+      correct: correctAns,
+      isCorrect: isCorrect
+    });
+
+    currentIndex++;
+    if (currentIndex < currentQuestions.length) {
+      showQuestion();
+    } else {
+      terminationReason = "Completed All 20 Questions";
+      endQuiz("Exam Complete!");
+    }
+  }
+
+  // 4. ANTI-CHEAT: FULL-SCREEN EXIT, TAB SWITCH, COPY/PASTE, RIGHT-CLICK BLOCK
+  function handleSecurityViolation(reasonText) {
+    if (!examActive || examEnded) return;
+    violationCount++;
+    if (violationCount === 1) {
+      document.getElementById('warning-reason').innerHTML =
+        `<strong>Violation Detected:</strong> ${reasonText}.<br><br>You are not allowed to exit full-screen, switch tabs, or copy/paste. <strong>One more violation will immediately close and submit your exam!</strong>`;
+      document.getElementById('warning-modal').classList.remove('hidden');
+    } else {
+      document.getElementById('warning-modal').classList.add('hidden');
+      terminationReason = `Closed due to security violation (${reasonText})`;
+      endQuiz("Exam Closed — Security Violation!");
+    }
+  }
+
+  async function resumeFullScreen() {
+    document.getElementById('warning-modal').classList.add('hidden');
+    try {
+      const docEl = document.documentElement;
+      if (!document.fullscreenElement && docEl.requestFullscreen) {
+        await docEl.requestFullscreen();
+      }
+    } catch (e) {}
+  }
+
+  document.addEventListener('fullscreenchange', () => {
+    if (examActive && !examEnded && !document.fullscreenElement) {
+      handleSecurityViolation("Exited Full-Screen Mode");
+    }
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (examActive && !examEnded && document.hidden) {
+      handleSecurityViolation("Switched Tab or Minimized Browser");
+    }
+  });
+
+  ['copy', 'cut', 'paste', 'contextmenu'].forEach(evt => {
+    document.addEventListener(evt, (e) => {
+      if (examActive && !examEnded) {
+        e.preventDefault();
+        handleSecurityViolation(`Attempted ${evt.toUpperCase()}`);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!examActive || examEnded) return;
+    if ((e.ctrlKey || e.metaKey) && ['c', 'v', 'x', 'a', 'u', 's', 'p'].includes(e.key.toLowerCase())) {
+      e.preventDefault();
+      handleSecurityViolation(`Blocked Shortcut (Ctrl+${e.key.toUpperCase()})`);
+    }
+    if (e.key === 'F12' || e.key === 'PrintScreen') {
+      e.preventDefault();
+      handleSecurityViolation("Blocked Restricted Key");
+    }
+  });
+
+  // 5. END EXAM & SEND DATA + PHOTOS TO GOOGLE SHEETS
+  function endQuiz(title) {
+    if (examEnded) return;
+    examEnded = true;
+    examActive = false;
+
+    clearInterval(timerInterval);
+    randomPhotoTimers.forEach(t => clearTimeout(t));
+    stopCamera();
+
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch(() => {});
+    }
+
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('warning-modal').classList.add('hidden');
+    document.getElementById('result-screen').classList.remove('hidden');
+    document.getElementById('result-title').textContent = title;
+
+    const submittedAt = new Date().toLocaleString();
+    document.getElementById('result-student-info').innerHTML = `
+      <strong>Full Name:</strong> ${studentInfo.firstName} ${studentInfo.lastName}<br>
+      <strong>Student ID:</strong> ${studentInfo.studentId}<br>
+      <strong>Group:</strong> ${studentInfo.group}<br>
+      <strong>Status:</strong> ${terminationReason} (Warnings: ${violationCount})<br>
+      <strong>Submitted:</strong> ${submittedAt}
+    `;
+
+    document.getElementById('score').textContent = score;
+    document.getElementById('score-percent').textContent = `${Math.round((score / 20) * 100)}% Score (${userAnswers.length} of 20 answered)`;
+
+    // Render captured photos on receipt
+    const stripEl = document.getElementById('photo-strip');
+    stripEl.innerHTML = capturedPhotos.map(p =>
+      `<div><img src="${p.image}" alt="${p.label}"><div style="font-size:0.7rem;color:#64748b;">${p.label}</div></div>`
+    ).join('');
+
+    while (userAnswers.length < currentQuestions.length) {
+      const [qText, correctAns] = currentQuestions[userAnswers.length];
+      userAnswers.push({
+        question: qText,
+        chosen: null,
+        correct: correctAns,
+        isCorrect: false
+      });
+    }
+
+    const reviewHTML = userAnswers.map((item, i) => {
+      const userText = item.chosen === null ? 'Not answered' : (item.chosen ? 'True' : 'False');
+      return `
+        <div class="review-item ${item.isCorrect ? 'is-correct' : 'is-wrong'}">
+          <strong>${i + 1}. ${item.question}</strong><br>
+          Your answer: <span class="${item.isCorrect ? 'correct' : 'wrong'}">${userText}</span>
+          ${!item.isCorrect ? ` &mdash; Correct answer: <span class="correct">${item.correct ? 'True' : 'False'}</span>` : ''}
+        </div>
+      `;
+    }).join('');
+    document.getElementById('review-list').innerHTML = reviewHTML;
+
+    sendToGoogleSheet(submittedAt);
+  }
+
+  async function sendToGoogleSheet(submittedAt) {
+    const syncEl = document.getElementById('sync-status');
+    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+      syncEl.textContent = "Google Sheet URL not configured yet (see setup instructions).";
+      syncEl.className = "sync-badge fail";
+      return;
+    }
+
+    const payload = {
+      timestamp: submittedAt,
+      firstName: studentInfo.firstName,
+      lastName: studentInfo.lastName,
+      studentId: studentInfo.studentId,
+      group: studentInfo.group,
+      score: score,
+      total: 20,
+      status: terminationReason,
+      warnings: violationCount,
+      photos: capturedPhotos.map(p => p.image)
+    };
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify(payload)
+      });
+      syncEl.textContent = "Results & 5 Verification Photos Sent to Google Sheet!";
+      syncEl.className = "sync-badge success";
+    } catch (err) {
+      syncEl.textContent = "Network error sending to Google Sheet. Take a screenshot of this page.";
+      syncEl.className = "sync-badge fail";
+    }
+  }
+</script>
+
+</body>
+</html>
