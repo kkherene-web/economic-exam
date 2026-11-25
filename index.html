@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>General Economic English - Proctored 2-Minute Quiz</title>
+  <title>General Economic English - Secure Proctored Exam</title>
   <style>
     * { box-sizing: border-box; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 740px;
-      margin: 24px auto;
+      max-width: 760px;
+      margin: 22px auto;
       padding: 16px;
       background: #f1f5f9;
       color: #1e293b;
@@ -20,14 +20,13 @@
       user-select: text;
       -webkit-user-select: text;
     }
-    /* Top Blue Gradient Banner */
     .banner {
-      background: linear-gradient(135deg, #2b2d9c 0%, #3730a3 55%, #4338ca 100%);
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 55%, #3730a3 100%);
       color: #ffffff;
       text-align: center;
-      padding: 28px 20px;
+      padding: 26px 20px;
       border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(43, 45, 156, 0.22);
+      box-shadow: 0 8px 20px rgba(30, 27, 75, 0.25);
       margin-bottom: 20px;
     }
     .banner-badge {
@@ -43,18 +42,9 @@
       text-transform: uppercase;
       margin-bottom: 10px;
     }
-    .banner h1 {
-      margin: 0 0 8px 0;
-      font-size: 1.65rem;
-      font-weight: 800;
-    }
-    .banner p {
-      margin: 0;
-      color: #c7d2fe;
-      font-size: 0.9rem;
-    }
+    .banner h1 { margin: 0 0 8px 0; font-size: 1.62rem; font-weight: 800; }
+    .banner p { margin: 0; color: #c7d2fe; font-size: 0.88rem; }
 
-    /* Card Container */
     .card {
       background: #ffffff;
       padding: 26px;
@@ -63,24 +53,21 @@
       border: 1px solid #e2e8f0;
     }
     .reg-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.22rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #0f172a;
       margin: 0 0 6px 0;
     }
     .reg-subtitle {
       color: #64748b;
-      font-size: 0.9rem;
-      margin: 0 0 20px 0;
+      font-size: 0.88rem;
+      margin: 0 0 18px 0;
     }
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 14px;
     }
     @media (max-width: 560px) {
       .form-grid { grid-template-columns: 1fr; }
@@ -91,13 +78,12 @@
       font-weight: 700;
       color: #334155;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
       margin-bottom: 6px;
     }
     .req { color: #dc2626; }
     input[type="text"], select {
       width: 100%;
-      padding: 11px 14px;
+      padding: 11px 13px;
       font-size: 0.95rem;
       border: 1px solid #cbd5e1;
       border-radius: 8px;
@@ -115,25 +101,26 @@
     }
     .error-msg {
       color: #dc2626;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-top: 10px;
       display: none;
+      text-align: center;
     }
 
-    /* Camera Box */
-    .camera-box {
+    /* Camera + Mic Verification Box */
+    .media-box {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-radius: 10px;
       padding: 16px;
-      margin-top: 14px;
+      margin-top: 12px;
       text-align: center;
     }
     .video-wrap {
       position: relative;
-      width: 240px;
-      height: 180px;
+      width: 230px;
+      height: 172px;
       margin: 10px auto;
       background: #0f172a;
       border-radius: 8px;
@@ -146,39 +133,87 @@
       object-fit: cover;
       transform: scaleX(-1);
     }
-    .cam-status {
-      font-size: 0.84rem;
-      font-weight: 600;
+    .mic-meter-wrap {
+      max-width: 230px;
+      margin: 8px auto 4px auto;
+      text-align: left;
+    }
+    .mic-meter-label {
+      font-size: 0.74rem;
+      font-weight: 700;
       color: #475569;
-      margin-top: 6px;
-    }
-    .cam-status.ok { color: #16a34a; }
-    .cam-status.err { color: #dc2626; }
-
-    /* Yellow Instructions Box */
-    .instructions-box {
-      background: #fefce8;
-      border: 1px solid #fde047;
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin: 18px 0 20px 0;
+      margin-bottom: 3px;
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
+      justify-content: space-between;
     }
-    .warn-icon { font-size: 1.2rem; line-height: 1.3; }
-    .instructions-content {
-      font-size: 0.85rem;
+    .mic-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .mic-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #16a34a;
+      transition: width 0.08s linear;
+    }
+    .media-status {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #475569;
+      margin-top: 8px;
+    }
+    .media-status.ok { color: #16a34a; }
+    .media-status.err { color: #dc2626; }
+
+    /* Arabic Rules & Consent Box */
+    .arabic-rules-box {
+      direction: rtl;
+      text-align: right;
+      background: #fefce8;
+      border: 1px solid #facc15;
+      border-right: 5px solid #eab308;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0 16px 0;
       color: #713f12;
-      line-height: 1.55;
+      font-size: 0.92rem;
+      line-height: 1.75;
     }
-    .instructions-content strong.title {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 4px;
+    .arabic-rules-box .rules-header {
+      font-weight: 800;
+      font-size: 1rem;
       color: #854d0e;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .instructions-content ul { margin: 0; padding-left: 18px; }
+    .arabic-rules-box ul {
+      margin: 0 0 12px 0;
+      padding-right: 20px;
+      padding-left: 0;
+    }
+    .consent-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #fde047;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+    }
+    .consent-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #1d63dc;
+      cursor: pointer;
+    }
 
     /* Buttons */
     .btn-primary {
@@ -198,17 +233,17 @@
       background: #94a3b8;
       cursor: not-allowed;
     }
-    .btn-cam {
-      padding: 9px 16px;
+    .btn-media {
+      padding: 10px 18px;
       background: #0f172a;
       color: #ffffff;
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       border: none;
-      border-radius: 7px;
+      border-radius: 8px;
       cursor: pointer;
     }
-    .btn-cam:hover { background: #334155; }
+    .btn-media:hover { background: #334155; }
 
     /* Quiz Screen */
     .student-bar {
@@ -216,28 +251,45 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 8px 14px;
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       color: #475569;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
     }
+    .proctor-badges {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
     .proctor-pill {
       background: #fee2e2;
       color: #b91c1c;
       font-weight: 700;
-      font-size: 0.75rem;
-      padding: 3px 10px;
+      font-size: 0.72rem;
+      padding: 3px 9px;
       border-radius: 999px;
+    }
+    .voice-pill {
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .voice-pill.loud {
+      background: #dc2626;
+      color: #ffffff;
     }
     .quiz-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .progress-text { font-weight: 700; color: #334155; font-size: 0.98rem; }
     .timer {
@@ -265,7 +317,7 @@
       background: #e2e8f0;
       border-radius: 999px;
       overflow: hidden;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
     .progress-bar-fill {
       height: 100%;
@@ -273,34 +325,58 @@
       width: 0%;
       transition: width 0.25s ease;
     }
+    .scoring-note {
+      font-size: 0.8rem;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-weight: 600;
+    }
     .question-text {
-      font-size: 1.22rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: #0f172a;
       line-height: 1.55;
       min-height: 80px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
-    .tf-group { display: flex; gap: 14px; }
+    .tf-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px) {
+      .tf-group { grid-template-columns: 1fr; }
+    }
     .btn-tf {
-      flex: 1;
-      padding: 15px;
-      font-size: 1.08rem;
+      padding: 15px 10px;
+      font-size: 1rem;
       font-weight: 700;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: transform 0.08s, background 0.2s;
     }
+    .btn-tf:active { transform: scale(0.98); }
     .btn-true { background: #1d63dc; color: #ffffff; }
     .btn-true:hover { background: #1e40af; }
     .btn-false { background: #475569; color: #ffffff; }
     .btn-false:hover { background: #334155; }
+    .btn-skip {
+      background: #e2e8f0;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-skip:hover { background: #cbd5e1; }
 
-    /* Security Warning Modal Overlay */
+    /* Security Warning Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.88);
+      background: rgba(15, 23, 42, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -309,7 +385,7 @@
     }
     .modal-box {
       background: #ffffff;
-      max-width: 440px;
+      max-width: 450px;
       width: 100%;
       padding: 26px;
       border-radius: 14px;
@@ -317,100 +393,65 @@
       border-top: 6px solid #dc2626;
       box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     }
-    .modal-box h3 {
-      color: #dc2626;
-      margin: 0 0 10px 0;
-      font-size: 1.3rem;
-    }
-    .modal-box p {
-      color: #334155;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
+    .modal-box h3 { color: #dc2626; margin: 0 0 10px 0; font-size: 1.28rem; }
+    .modal-box p { color: #334155; font-size: 0.94rem; line-height: 1.55; margin-bottom: 18px; }
 
-    /* Result Screen */
+    /* End Confirmation Screen (NO SCORE SHOWN TO STUDENT) */
     .hidden { display: none !important; }
-    .result-summary {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
+    .submitted-box {
       text-align: center;
+      padding: 20px 10px;
+    }
+    .check-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: #16a34a;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px auto;
+      font-weight: 800;
     }
     .student-receipt {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: #334155;
-      background: #ffffff;
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 16px;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 18px 0;
       text-align: left;
-      line-height: 1.6;
+      line-height: 1.7;
     }
-    .score-big { font-size: 2.3rem; font-weight: 800; color: #0f172a; }
     .sync-badge {
       display: inline-block;
-      margin-top: 10px;
-      padding: 6px 14px;
+      margin-top: 6px;
+      padding: 8px 16px;
       border-radius: 999px;
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       font-weight: 700;
       background: #e0f2fe;
       color: #0369a1;
     }
     .sync-badge.success { background: #dcfce7; color: #15803d; }
     .sync-badge.fail { background: #fee2e2; color: #b91c1c; }
-
-    .photo-strip {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      margin: 14px 0;
-    }
-    .photo-strip img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid #cbd5e1;
-    }
-    .review-title {
-      font-weight: 700;
-      font-size: 1rem;
-      color: #1e293b;
-      margin: 22px 0 12px 0;
-    }
-    .review-item {
-      padding: 12px 14px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      background: #f8fafc;
-      border-left: 4px solid #cbd5e1;
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
-    .review-item.is-correct { border-left-color: #16a34a; }
-    .review-item.is-wrong { border-left-color: #dc2626; background: #fef2f2; }
-    .correct { color: #16a34a; font-weight: 700; }
-    .wrong { color: #dc2626; font-weight: 700; }
   </style>
 </head>
 <body>
 
-  <!-- TOP BANNER -->
   <div class="banner">
-    <div class="banner-badge">Proctored Assessment &bull; 400-Question Bank</div>
-    <h1>General Economic English - 2-Minute Quiz</h1>
+    <div class="banner-badge">Proctored Assessment &bull; Secure Exam Browser</div>
+    <h1>General Economic English - 2-Minute Exam</h1>
     <p>Topics: Microeconomics, Macroeconomics, Markets, Production, Money, Banking &amp; Inflation</p>
   </div>
 
-  <!-- STEP 1: STUDENT REGISTRATION & CAMERA AUTHORIZATION -->
+  <!-- STEP 1: REGISTRATION, CAMERA + MIC CHECK & ARABIC CONSENT -->
   <div class="card" id="start-screen">
-    <h2 class="reg-title">&#128100; Student Registration &amp; Camera Check</h2>
-    <p class="reg-subtitle">Enter your official details and enable your camera before starting the 2-minute secure exam.</p>
+    <h2 class="reg-title">&#128100; Student Registration &amp; Device Verification</h2>
+    <p class="reg-subtitle">All fields, camera + microphone authorization, and agreement to exam rules are mandatory.</p>
 
     <div class="form-grid">
       <div class="form-group">
@@ -426,7 +467,7 @@
     <div class="form-grid">
       <div class="form-group">
         <label for="studentId">STUDENT ID / &#1585;&#1602;&#1605; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; <span class="req">*</span></label>
-        <input type="text" id="studentId" placeholder="e.g. 202639012345">
+        <input type="text" id="studentId" placeholder="e.g. 252531214050" inputmode="numeric">
       </div>
       <div class="form-group">
         <label for="studentGroup">GROUP / &#1575;&#1604;&#1601;&#1608;&#1580; <span class="req">*</span></label>
@@ -441,37 +482,53 @@
       </div>
     </div>
 
-    <!-- CAMERA AUTHORIZATION SECTION -->
-    <div class="camera-box">
-      <button type="button" class="btn-cam" id="btn-enable-cam" onclick="requestCamera()">&#128247; Authorize &amp; Enable Camera</button>
+    <!-- CAMERA & MICROPHONE VERIFICATION -->
+    <div class="media-box">
+      <button type="button" class="btn-media" id="btn-enable-media" onclick="requestCameraAndMic()">&#128247; &#127908; Authorize Camera &amp; Microphone</button>
       <div class="video-wrap">
         <video id="webcam-video" autoplay playsinline muted></video>
       </div>
-      <div class="cam-status" id="cam-status">Camera permission is required to start the exam.</div>
-    </div>
-
-    <div class="error-msg" id="form-error">Please complete all fields and authorize your camera before starting.</div>
-
-    <div class="instructions-box">
-      <div class="warn-icon">&#9888;&#65039;</div>
-      <div class="instructions-content">
-        <strong class="title">Strict Safe-Exam Rules:</strong>
-        <ul>
-          <li><strong>Time &amp; Questions:</strong> 2 minutes (120 seconds) for 20 random True/False questions.</li>
-          <li><strong>Camera Proctoring:</strong> 1 initial photo + 4 random photos will be taken during the 120 seconds and sent with your grade to Google Sheets.</li>
-          <li><strong>Full-Screen Lock:</strong> The exam opens in mandatory Full-Screen mode. Exiting full-screen, switching tabs, or copying/pasting triggers a warning—a second violation automatically closes and submits your exam.</li>
-        </ul>
+      <div class="mic-meter-wrap">
+        <div class="mic-meter-label">
+          <span>Microphone Level:</span>
+          <span id="mic-db-label">Waiting...</span>
+        </div>
+        <div class="mic-bar-bg">
+          <div class="mic-bar-fill" id="mic-bar-fill"></div>
+        </div>
       </div>
+      <div class="media-status" id="media-status">A working webcam AND microphone are strictly required to start.</div>
     </div>
 
-    <button class="btn-primary" id="btn-start-exam" onclick="validateAndStart()" disabled>Authorize Camera First to Start &rarr;</button>
+    <!-- ARABIC INSTRUCTIONS & MANDATORY CONSENT -->
+    <div class="arabic-rules-box">
+      <div class="rules-header">&#9888;&#65039; تعليمات وقواعد الامتحان (يرجى القراءة والموافقة قبل البدء):</div>
+      <ul>
+        <li><strong>مدة الامتحان:</strong> 2 دقيقة (120 ثانية) للإجابة عن 20 سؤالاً عشوائياً.</li>
+        <li><strong>نظام التنقيط:</strong> الإجابة الصحيحة (<strong>+1</strong>)، الإجابة الخاطئة (<strong>-1</strong>)، خيار "دون إجابة / لا أعرف" (<strong>0</strong>) — يُنصح باختيار "دون إجابة" عند عدم التأكد لتجنب خصم النقاط.</li>
+        <li><strong>الكاميرا والميكروفون:</strong> قبل البدء لابد من السماح بتشغيل الكاميرا والميكروفون معاً (لا يمكن بدء الامتحان بدون كاميرا حقيقية شغالة).</li>
+        <li><strong>قواعد المراقبة:</strong> يُمنع الخروج من وضع ملء الشاشة أو مغادرة المتصفح أو فتح أي نافذة أخرى، كما يُمنع الحديث أو وجود أي أصوات خارجية في الغرفة.</li>
+        <li><strong>عدم الإعادة والخصوصية:</strong> بعد الدخول للامتحان لا يُسمح بالإعادة برقم التسجيل نفسه. بيانات وصور وتسجيلات الطلبة تُجمع حصرياً لغرض التحقق من نزاهة سير الامتحان ثم يتم التخلص منها تلقائياً بعد التصحيح.</li>
+      </ul>
+      <label class="consent-row">
+        <input type="checkbox" id="agreeRules">
+        <span>قرأت جميع التعليمات أعلاه وأوافق على الالتزام بها وتفعيل الكاميرا والميكروفون.</span>
+      </label>
+    </div>
+
+    <div class="error-msg" id="form-error"></div>
+
+    <button class="btn-primary" id="btn-start-exam" onclick="validateAndStart()" disabled>Authorize Camera &amp; Mic First to Start &rarr;</button>
   </div>
 
-  <!-- STEP 2: TIMED SECURE QUIZ -->
+  <!-- STEP 2: SECURE TIMED QUIZ -->
   <div class="card hidden" id="quiz-screen">
     <div class="student-bar">
       <span><strong>Student:</strong> <span id="display-name"></span> (<span id="display-group"></span>)</span>
-      <span class="proctor-pill">&#9679; PROCTORED &bull; FULL-SCREEN LOCK</span>
+      <div class="proctor-badges">
+        <span class="voice-pill" id="live-voice-pill">&#127908; Voice Events: 0</span>
+        <span class="proctor-pill">&#9679; CAM + MIC LOCKED</span>
+      </div>
     </div>
 
     <div class="quiz-header">
@@ -483,62 +540,90 @@
       <div class="progress-bar-fill" id="progress-bar"></div>
     </div>
 
+    <div class="scoring-note">
+      Marking Scheme: Correct = <strong>+1</strong> &nbsp;|&nbsp; Wrong = <strong>-1</strong> &nbsp;|&nbsp; Skip / Don't Know = <strong>0</strong>
+    </div>
+
     <div class="question-text" id="question-text"></div>
 
     <div class="tf-group">
-      <button class="btn-tf btn-true" onclick="submitAnswer(true)">True</button>
-      <button class="btn-tf btn-false" onclick="submitAnswer(false)">False</button>
+      <button class="btn-tf btn-true" onclick="submitAnswer(true)">True (صحيح)</button>
+      <button class="btn-tf btn-false" onclick="submitAnswer(false)">False (خطأ)</button>
+      <button class="btn-tf btn-skip" onclick="submitAnswer(null)">Don't Know / Skip (دون إجابة)</button>
     </div>
   </div>
 
-  <!-- SECURITY VIOLATION WARNING MODAL -->
+  <!-- SECURITY VIOLATION MODAL -->
   <div class="modal-overlay hidden" id="warning-modal">
     <div class="modal-box">
-      <h3>&#9888;&#65039; Security Warning (1 / 2)</h3>
-      <p id="warning-reason">You exited full-screen mode or attempted a restricted action (copy/paste/tab switch).<br><br><strong>If you do this again, your exam will be closed and submitted immediately!</strong></p>
-      <button class="btn-primary" onclick="resumeFullScreen()">Return to Full-Screen Exam</button>
+      <h3>&#9888;&#65039; تحذير أمني / Security Warning (1 / 2)</h3>
+      <p id="warning-reason"></p>
+      <button class="btn-primary" onclick="resumeFullScreen()">العودة للامتحان / Return to Full-Screen</button>
     </div>
   </div>
 
-  <!-- STEP 3: RESULT & SUBMISSION STATUS -->
+  <!-- STEP 3: SUBMISSION RECEIPT (NO SCORE REVEALED) -->
   <div class="card hidden" id="result-screen">
-    <h2 id="result-title" style="margin-top:0;">Exam Complete!</h2>
+    <div class="submitted-box">
+      <div class="check-circle">&#10003;</div>
+      <h2 id="result-title" style="margin: 0 0 8px 0; color: #0f172a;">تم إرسال إجاباتك بنجاح / Exam Submitted</h2>
+      <p style="color: #475569; font-size: 0.95rem; margin: 0;">
+        تم تسجيل إجاباتك وبيانات التحقق وإرسالها إلى الأستاذ. لن تُعرض النتيجة هنا لأسباب تنظيمية.<br>
+        <span style="font-size: 0.84rem; color: #64748b;">Your responses and proctoring logs have been securely transmitted to your instructor.</span>
+      </p>
 
-    <div class="result-summary">
       <div class="student-receipt" id="result-student-info"></div>
-      <div class="score-big"><span id="score">0</span> / 20</div>
-      <div id="score-percent" style="color: #64748b; margin-top: 4px; font-weight: 600;"></div>
-      <div class="sync-badge" id="sync-status">Sending results &amp; verification photos to Google Sheet...</div>
-      <div class="photo-strip" id="photo-strip"></div>
+      <div class="sync-badge" id="sync-status">جاري إرسال الإجابات وملفات التحقق إلى Google Sheet...</div>
     </div>
-
-    <div class="review-title">Question Review</div>
-    <div id="review-list"></div>
   </div>
 
-  <!-- Hidden Canvas for Snapshot Capture -->
-  <canvas id="snap-canvas" width="240" height="180" class="hidden"></canvas>
+  <canvas id="snap-canvas" width="220" height="165" class="hidden"></canvas>
 
 <script>
   // =========================================================================
-  // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW
+  // PASTE YOUR FULL GOOGLE APPS SCRIPT WEB APP URL BELOW
   // =========================================================================
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHsWK9vVD8VL26gZHvwVX1R_DPuWlJHyPc8Nhq9Sp_IQAFSqdNx6X2Nqh7wipa0vJZvQ/exec";
+  const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
-  // All 400 questions: [questionText, isTrue]
-  const questionBank = [["Economics is the study of how people use limited resources to make choices.", true], ["Scarcity means that resources are unlimited.", false], ["A consumer is a person who buys or uses goods and services.", true], ["A producer is a person who only buys goods.", false], ["English is only useful for reading, not for communication.", false], ["Microeconomics looks at the whole economy.", false], ["Macroeconomics studies inflation and unemployment.", true], ["The word \"economy\" is an adjective.", false], ["Economic is an adjective related to the economy.", true], ["Business focuses on producing and selling goods or services.", true], ["Management focuses on organizing people and resources.", true], ["An economic agent is a person or organization that makes economic decisions.", true], ["Households provide labour to firms and receive income.", true], ["Firms hire workers and pay wages to households.", true], ["The government collects taxes from households and firms.", true], ["Banks provide loans to households and firms.", true], ["Consumption is the production of goods.", false], ["Saving means keeping money for future use.", true], ["Investment is the use of money to buy capital goods.", true], ["The circular flow of income shows how money moves in the economy.", true], ["A need is something we want but do not require for survival.", false], ["Food, water, and shelter are basic needs.", true], ["A smartphone is a basic need.", false], ["Because of scarcity, we must make choices.", true], ["Opportunity cost is the value of the best alternative you give up.", true], ["Opportunity cost is always measured in money.", false], ["If you choose to study instead of working, your opportunity cost is the lost salary.", true], ["Rich countries do not face scarcity.", false], ["Every choice involves a trade-off.", true], ["Decision-making involves comparing costs and benefits.", true], ["Unlimited wants mean that people always want more goods and services.", true], ["Economics is mainly about managing unlimited resources.", false], ["Time is an example of a scarce resource.", true], ["A benefit is what you gain from a choice.", true], ["A cost is what you give up or pay.", true], ["The law of demand states that when price goes up, demand goes up.", false], ["The law of supply states that when price goes up, supply goes up.", true], ["Market equilibrium happens when supply equals demand.", true], ["A shortage happens when supply is greater than demand.", false], ["A surplus usually causes prices to go down.", true], ["Demand comes from producers.", false], ["Supply comes from sellers and producers.", true], ["If a product is very popular, its demand usually increases.", true], ["When there is a shortage, prices usually fall.", false], ["At equilibrium, there is no shortage and no surplus.", true], ["A buyer is a person who sells goods in the market.", false], ["Sellers want to make a profit.", true], ["Competition between sellers can help lower prices.", true], ["When people's income increases, demand for normal goods usually decreases.", false], ["A surplus means there are too many goods and not enough buyers.", true], ["In a free market, the government always decides the price of goods.", false], ["The demand curve usually slopes downward.", true], ["The supply curve usually slopes upward.", true], ["If a product is too expensive, most buyers will still buy it.", false], ["Prices in a market are influenced by both buyers and sellers.", true], ["Production is the process of making goods or providing services.", true], ["Land, labour, capital, and money are the four factors of production.", false], ["Labour refers to the human effort used in production.", true], ["Capital includes machines, tools, and buildings used in production.", true], ["Fixed costs change when the level of production changes.", false], ["Factory rent is an example of a fixed cost.", true], ["Raw materials are an example of a variable cost.", true], ["Total cost is the sum of fixed costs and variable costs.", true], ["Revenue is the money a business spends on production.", false], ["Profit is calculated as Revenue minus Costs.", true], ["If costs are higher than revenue, a business makes a profit.", false], ["Productivity measures how much output is produced per unit of input.", true], ["Using better technology can increase productivity.", true], ["Efficiency means producing goods while wasting many resources.", false], ["Enterprise (entrepreneurship) is the skill of organizing the other factors of production.", true], ["Higher productivity usually leads to higher costs per unit.", false], ["Money is considered a factor of production in economics.", false], ["Variable costs change with the quantity of goods produced.", true], ["A business that produces more goods with the same number of workers has increased its productivity.", true], ["The main goal of most businesses is to make a loss.", false], ["A firm is an organization that produces goods or provides services.", true], ["The main goal of most firms is to make a profit.", true], ["An entrepreneur is someone who starts a business and takes risks.", true], ["Entrepreneurship usually leads to fewer jobs in the economy.", false], ["SME stands for Small and Medium-sized Enterprise.", true], ["Start-ups are always very large companies.", false], ["A business plan describes the goals and strategy of a company.", true], ["Managers are responsible for planning work and organizing employees.", true], ["Shareholders own part of a company.", true], ["Innovation means doing things exactly the same way as before.", false], ["Innovation helps businesses compete and grow.", true], ["Business development is the process of growing a company.", true], ["Competitiveness is the ability of a firm to compete in the market.", true], ["Entrepreneurs do not take any risks when starting a business.", false], ["SMEs are important because they create many jobs.", true], ["A start-up is usually a new company, often in technology.", true], ["An enterprise is another word for a business or company.", true], ["Managers own part of the company and receive dividends.", false], ["Innovation can help a business grow and stay competitive.", true], ["Business development means reducing the company's activities.", false], ["A business plan is a written document describing a company's goals.", true], ["An elevator pitch is a long, detailed presentation about a business.", false], ["Market analysis explains who the customers are.", true], ["A good business plan should be clear, realistic, and well-written.", true], ["Good presentation skills help you convince investors to support your business.", true], ["A firm is an organization that produces goods or provides services.", true], ["The main goal of most firms is to make a profit.", true], ["An entrepreneur is someone who starts a business and takes risks.", true], ["Entrepreneurship usually leads to fewer jobs in the economy.", false], ["SME stands for Small and Medium-sized Enterprise.", true], ["Start-ups are always very large companies.", false], ["A business plan describes the goals and strategy of a company.", true], ["Managers are responsible for planning work and organizing employees.", true], ["Shareholders own part of a company.", true], ["Innovation means doing things exactly the same way as before.", false], ["Innovation helps businesses compete and grow.", true], ["Business development is the process of growing a company.", true], ["Competitiveness is the ability of a firm to compete in the market.", true], ["Entrepreneurs do not take any risks when starting a business.", false], ["SMEs are important because they create many jobs.", true], ["A start-up is usually a new company, often in technology.", true], ["An enterprise is another word for a business or company.", true], ["Managers own part of the company and receive dividends.", false], ["Innovation can help a business grow and stay competitive.", true], ["Business development means reducing the company's activities.", false], ["Money is used as a medium of exchange.", true], ["Money cannot be used as a store of value.", false], ["Commercial banks offer financial services to the public and businesses.", true], ["The central bank is often called the \"bank of the government.\"", true], ["A deposit is money borrowed from a bank.", false], ["A loan is money borrowed from a bank that must be paid back.", true], ["Interest is the extra money paid for borrowing money or earned from saving.", true], ["When interest rates go up, borrowing money becomes cheaper.", false], ["When interest rates go up, saving money becomes more attractive.", true], ["A borrower is a person or business that receives money and must pay it back.", true], ["A lender is a person who borrows money from the bank.", false], ["Credit allows people to buy goods now and pay for them later.", true], ["The central bank manages the country's money supply.", true], ["Commercial banks print the currency of a country.", false], ["People deposit money in a bank to keep it safe.", true], ["Saving means keeping money for future use.", true], ["Money is a unit of account used to measure the value of goods.", true], ["Credit cards are a common form of credit.", true], ["You must pay back a loan without any interest.", false], ["The Dinar is the currency of Algeria.", true], ["Inflation means that the general level of prices is increasing.", true], ["Inflation increases the purchasing power of money.", false], ["Purchasing power is the amount of goods and services that money can buy.", true], ["The Consumer Price Index (CPI) is used to measure inflation.", true], ["Unemployment means that people have jobs but do not want to work.", false], ["A job seeker is a person who is actively looking for work.", true], ["The labour market is where goods and services are sold.", false], ["A wage is usually paid per hour or per day.", true], ["A salary is a fixed amount of money paid every month.", true], ["When demand for labour is high, wages usually decrease.", false], ["During an economic crisis, unemployment usually increases.", true], ["High unemployment means that people have more money to spend.", false], ["Employment means having a paid job.", true], ["If prices go up but your salary stays the same, you can buy more goods.", false], ["Inflation can reduce the standard of living for people with fixed incomes.", true], ["Economic growth means that unemployment always increases.", false], ["Workers supply their labour in the labour market.", true], ["High wages always reduce the production costs for companies.", false], ["An economic crisis is a period of fast economic growth.", false], ["Governments try to reduce unemployment to improve living standards.", true], ["Inflation is when prices go down.", false], ["When inflation is high, the value of money decreases.", true], ["A person who is not working and not looking for a job is counted as unemployed.", false], ["The labour market is a place where employers look for workers.", true], ["Salaries are usually paid on an hourly basis.", false], ["Wages are usually paid on an hourly or daily basis.", true], ["If prices go up, your purchasing power goes down.", true], ["High inflation is good for people who save money in the bank.", false], ["The central bank controls interest rates in the country.", true], ["Commercial banks create the national currency.", false], ["A credit card is a form of a loan.", true], ["A savings account is a type of deposit.", true], ["Interest rates are the same in all banks.", false], ["Entrepreneurs create new businesses and jobs.", true], ["A business plan is only needed for large companies.", false], ["SMEs create a large number of jobs in the economy.", true], ["Shareholders receive part of the company's profits called dividends.", true], ["Innovation means copying another company's product.", false], ["A start-up usually tries to grow very quickly.", true], ["Managers and shareholders have the same role in a company.", false], ["Higher interest rates make it more expensive to borrow money.", true], ["Central banks aim to control inflation.", true], ["A deposit is money you take out of a bank.", false], ["Money is the only factor of production in a business.", false], ["A business plan includes market analysis and financial information.", true], ["Presenting a business plan is important to convince investors.", true], ["Inflation is measured by the CPI.", true], ["Unemployment can lead to lower living standards.", true], ["The labour market includes only factory workers.", false], ["Salaries are usually higher for jobs that require more skills.", true], ["Economic crises usually lead to higher unemployment.", true], ["The central bank is the bank for commercial banks.", true], ["A loan must be paid back with interest.", true], ["Lenders are people who borrow money.", false], ["Borrowers pay interest to lenders.", true], ["Inflation only affects poor people.", false], ["A job seeker is someone who has given up looking for work.", false], ["Wages are the price of labour in the labour market.", true], ["The economic crisis affects only one company.", false], ["The government can help reduce unemployment by supporting businesses.", true], ["Economics only studies how to make money.", false], ["Scarcity forces individuals and societies to make choices.", true], ["The opportunity cost of a choice is the value of the next best alternative.", true], ["In a free market, prices are determined by supply and demand.", true], ["A need is something you desire but do not necessarily need to survive.", false], ["Macroeconomics focuses on individual consumers and specific companies.", false], ["Microeconomics studies the economy as a whole.", false], ["The word \"economic\" is a noun.", false], ["A consumer is someone who makes goods and provides services.", false], ["Producers aim to satisfy consumer wants and needs.", true], ["The study of economics helps us understand how resources are allocated.", true], ["A trade-off means getting more of one thing and less of another.", true], ["When a government decides to build a hospital instead of a school, there is no opportunity cost.", false], ["Money is the only resource used in production.", false], ["If demand increases and supply stays the same, prices usually go up.", true], ["If supply increases and demand stays the same, prices usually go down.", true], ["Market equilibrium means buyers and sellers agree on a price.", true], ["A shortage happens when producers make too many goods.", false], ["A surplus happens when consumers want to buy more than what is available.", false], ["When a product is in high demand but low supply, the price tends to rise.", true], ["The law of demand states that price and quantity demanded move in the same direction.", false], ["The law of supply states that price and quantity supplied move in the same direction.", true], ["A market is any place where buyers and sellers interact.", true], ["In a market, sellers want to sell at the highest possible price.", true], ["Buyers want to buy at the lowest possible price.", true], ["Production is only about making physical goods, not services.", false], ["Capital includes tools, machines, and buildings.", true], ["Labour is the human effort used in production.", true], ["Land as a factor of production includes natural resources.", true], ["Enterprise (entrepreneurship) means organizing the other factors of production.", true], ["Fixed costs change when the company produces more goods.", false], ["Variable costs change with the level of production.", true], ["Total cost is the sum of fixed and variable costs.", true], ["Profit is the money a business pays to the government.", false], ["A business can survive in the long run if its costs are always higher than its revenue.", false], ["Productivity measures how much output is produced per worker.", true], ["Using new technology can increase productivity.", true], ["Efficiency means producing goods without wasting resources.", true], ["A firm is a type of household.", false], ["Firms hire workers and pay them wages.", true], ["An entrepreneur takes risks to start a business.", true], ["SMEs are large multinational companies.", false], ["Start-ups usually aim for rapid growth.", true], ["A business plan is a roadmap for a company's future.", true], ["Shareholders own part of a company.", true], ["Managers own the company and receive dividends.", false], ["Innovation means creating new products or methods.", true], ["Competitiveness is the ability to compete in the market.", true], ["A business plan is only useful for getting a bank loan.", false], ["An elevator pitch is a very short summary of a business idea.", true], ["Money is a medium of exchange.", true], ["Money is a store of value.", true], ["Money is a unit of account.", true], ["Barter is the exchange of goods without using money.", true], ["Commercial banks print the country's currency.", false], ["The central bank manages the country's money supply.", true], ["A deposit is money placed in a bank account.", true], ["A loan is money you borrow and must pay back.", true], ["Interest is the cost of borrowing money.", true], ["Savers receive interest from the bank.", true], ["Borrowers pay interest to the bank.", true], ["When interest rates rise, borrowing becomes more expensive.", true], ["When interest rates rise, saving becomes less attractive.", false], ["Credit allows you to buy now and pay later.", true], ["A lender is someone who gives money to a borrower.", true], ["A borrower is someone who receives money and must pay it back.", true], ["The central bank is often called the \"bank of banks\".", true], ["Commercial banks provide loans to individuals and businesses.", true], ["Inflation means prices are generally falling.", false], ["Inflation reduces the purchasing power of money.", true], ["If inflation is 5% and your salary increases by 2%, your real income decreases.", true], ["Inflation is measured by the Consumer Price Index (CPI).", true], ["Deflation means prices are generally falling.", true], ["High inflation is good for people on fixed incomes.", false], ["Unemployment means people do not have jobs but are actively looking.", true], ["A person who is not looking for a job is considered unemployed.", false], ["High unemployment means less spending in the economy.", true], ["The labour market is where workers and employers meet.", true], ["A wage is usually paid per month.", false], ["A salary is usually paid per month.", true], ["High demand for labour usually leads to higher wages.", true], ["High supply of labour usually leads to lower wages.", true], ["An economic crisis is a period of rapid economic growth.", false], ["During an economic crisis, unemployment usually rises.", true], ["Governments try to reduce unemployment to improve living standards.", true], ["A job seeker is a person who wants to work but cannot find a job.", true], ["Economics is a social science that studies human behavior.", true], ["Resources are unlimited in economics.", false], ["The basic economic problem is how to satisfy unlimited wants with limited resources.", true], ["A want is something necessary for survival.", false], ["Microeconomics studies individual markets and businesses.", true], ["Macroeconomics studies inflation, unemployment, and growth.", true], ["The word \"economy\" refers to the system of production and trade in a country.", true], ["\"Economics\" is the adjective form of economy.", false], ["\"Economic\" is the adjective form of economy.", true], ["Consumers buy goods and services to satisfy their wants.", true], ["Producers make goods and provide services to earn a profit.", true], ["Scarcity means that we can have everything we want.", false], ["Opportunity cost is the value of what you give up when you make a choice.", true], ["Every choice has an opportunity cost.", true], ["If you choose to watch TV instead of studying, the opportunity cost is the knowledge you missed.", true], ["Decision-making involves comparing benefits and costs.", true], ["A benefit is what you gain from a choice.", true], ["A cost is what you give up or pay.", true], ["Demand is the quantity of a good consumers are willing and able to buy.", true], ["Supply is the quantity of a good producers are willing to sell.", true], ["When price increases, quantity demanded decreases.", true], ["When price increases, quantity supplied increases.", true], ["Market equilibrium is when quantity demanded equals quantity supplied.", true], ["At equilibrium, there is a shortage.", false], ["At equilibrium, there is a surplus.", false], ["A shortage occurs when demand is greater than supply.", true], ["A surplus occurs when supply is greater than demand.", true], ["Shortages usually cause prices to fall.", false], ["Surpluses usually cause prices to rise.", false], ["The demand curve slopes downward.", true], ["The supply curve slopes upward.", true], ["Competition can help lower prices in a market.", true], ["A market is a physical place only; online markets do not count.", false], ["Production is the process of making goods and services.", true], ["The four factors of production are land, labour, capital, and enterprise.", true], ["Labour refers to machines used in production.", false], ["Capital includes machines, tools, and buildings.", true], ["Land includes natural resources like water and oil.", true], ["Enterprise refers to the skill of organizing the other factors of production.", true], ["Fixed costs change with the level of production.", false], ["Variable costs change with the level of production.", true], ["Rent is an example of a variable cost.", false], ["Raw materials are an example of a variable cost.", true], ["Total cost is the sum of fixed and variable costs.", true], ["Revenue is the total money received from sales.", true], ["Profit is revenue minus costs.", true], ["If costs are greater than revenue, a business makes a loss.", true], ["Productivity measures output per worker.", true], ["Training workers can increase productivity.", true], ["Efficiency means producing with maximum waste.", false], ["A firm produces goods or provides services to make a profit.", true], ["An entrepreneur takes risks to start a new business.", true], ["SMEs stand for Small and Medium-sized Enterprises.", true], ["A start-up is a very old and large company.", false], ["A business plan describes the company's goals and strategy.", true], ["Managers organize employees and plan work.", true], ["Shareholders receive dividends from the company's profits.", true], ["Innovation means inventing new products or methods.", true], ["Competitiveness is the ability of a firm to compete in the market.", true], ["Business development is the process of shrinking a company.", false], ["An elevator pitch is a short summary of a business idea.", true], ["Good presentation skills help convince investors.", true], ["A market analysis studies customers and competitors.", true], ["A financial plan shows the costs and expected revenue.", true], ["Money is a medium of exchange.", true], ["Money is a store of value.", true], ["Money is a unit of account.", true], ["Barter is the exchange of goods without using money.", true], ["Commercial banks print money.", false], ["The central bank controls the country's money supply.", true], ["A deposit is money placed in a bank.", true], ["A loan is money you borrow from a bank.", true], ["Interest is the extra money paid for borrowing.", true], ["Savers receive interest from the bank.", true], ["Borrowers pay interest to the bank.", true], ["Higher interest rates make borrowing more expensive.", true], ["Higher interest rates make saving less attractive.", false], ["Credit allows you to buy now and pay later.", true], ["A lender gives money to a borrower.", true], ["A borrower receives money and must pay it back.", true], ["The central bank is often called the bank of the government.", true], ["Commercial banks provide services to the public and businesses.", true], ["Inflation means prices are generally falling.", false], ["Inflation reduces purchasing power.", true], ["If inflation is 5% and your salary increases by 2%, your real income decreases.", true], ["The CPI is used to measure inflation.", true], ["Deflation means prices are generally falling.", true], ["High inflation is good for people with fixed incomes.", false], ["Unemployment means people have no jobs and are actively looking.", true], ["A person who is not looking for a job is considered unemployed.", false], ["High unemployment means less spending in the economy.", true], ["The labour market is where workers and employers meet.", true], ["A wage is usually paid per month.", false], ["A salary is usually paid per month.", true], ["High demand for labour usually leads to higher wages.", true], ["High supply of labour usually leads to lower wages.", true], ["An economic crisis is a period of rapid economic growth.", false], ["During an economic crisis, unemployment usually rises.", true], ["Governments try to reduce unemployment to improve living standards.", true], ["A job seeker is someone who is looking for work.", true], ["Economics studies how people use limited resources.", true], ["Resources are unlimited in economics.", false], ["The basic economic problem is unlimited wants and limited resources.", true], ["A want is necessary for survival.", false], ["Microeconomics studies individual markets.", true], ["Macroeconomics studies inflation and unemployment.", true], ["\"Economy\" refers to the system of production and trade in a country.", true], ["\"Economics\" is the adjective form of economy.", false], ["\"Economic\" is an adjective.", true], ["Consumers buy goods and services.", true], ["Producers make goods and provide services to earn a profit.", true], ["Scarcity means we can have everything we want.", false], ["Opportunity cost is the value of what you give up.", true], ["Every choice has an opportunity cost.", true]];
+  // Obfuscated 400-question payload (decoded only in memory at runtime)
+  const _ENC_DATA = "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";
+  const _ENC_KEY = "KHERENE_EXAM_2026_SEC";
+
+  function decodeQuestionBank() {
+    const binStr = atob(_ENC_DATA);
+    const bytes = new Uint8Array(binStr.length);
+    for (let i = 0; i < binStr.length; i++) {
+      bytes[i] = binStr.charCodeAt(i) ^ _ENC_KEY.charCodeAt(i % _ENC_KEY.length);
+    }
+    const decodedJson = new TextDecoder('utf-8').decode(bytes);
+    return JSON.parse(decodedJson);
+  }
 
   let studentInfo = { firstName: '', lastName: '', studentId: '', group: '' };
   let mediaStream = null;
-  let cameraReady = false;
-  let capturedPhotos = []; // [initialPhoto, random1, random2, random3, random4]
+  let mediaReady = false;
+  let capturedPhotos = [];
   let randomPhotoTimers = [];
 
+  // Audio recording & Live Voice Detection variables
+  let audioContext = null;
+  let analyser = null;
+  let micMonitorInterval = null;
+  let mediaRecorder = null;
+  let audioChunks = [];
+  let compressedAudioBase64 = "";
+  let voiceEventCount = 0;
+  let lastVoiceTriggerTime = 0;
+
+  // Exam & Anti-cheat variables
   let currentQuestions = [];
   let currentIndex = 0;
-  let score = 0;
+  let correctCount = 0;
+  let wrongCount = 0;
+  let skipCount = 0;
   let userAnswers = [];
   let timeLeft = 120;
+  let examStartTimeMs = 0;
   let timerInterval = null;
 
   let examActive = false;
@@ -546,39 +631,162 @@
   let violationCount = 0;
   let terminationReason = "Completed Normally";
 
-  // 1. CAMERA AUTHORIZATION
-  async function requestCamera() {
-    const statusEl = document.getElementById('cam-status');
+  // 1. STRICT CAMERA + MICROPHONE VERIFICATION (BLOCKS DESKTOPS WITHOUT REAL WEBCAM)
+  async function requestCameraAndMic() {
+    const statusEl = document.getElementById('media-status');
     const videoEl = document.getElementById('webcam-video');
     const startBtn = document.getElementById('btn-start-exam');
 
     try {
+      // Check physical devices first
+      if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+        throw new Error("Browser does not support media devices.");
+      }
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      const hasCam = devices.some(d => d.kind === 'videoinput');
+      const hasMic = devices.some(d => d.kind === 'audioinput');
+      if (!hasCam || !hasMic) {
+        throw new Error("No physical camera or microphone detected on this computer.");
+      }
+
       mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { width: 320, height: 240, facingMode: "user" },
-        audio: false
+        audio: true
       });
+
+      const videoTracks = mediaStream.getVideoTracks();
+      const audioTracks = mediaStream.getAudioTracks();
+      if (videoTracks.length === 0 || audioTracks.length === 0) {
+        throw new Error("Both camera and microphone tracks are required.");
+      }
+
       videoEl.srcObject = mediaStream;
-      cameraReady = true;
-      statusEl.textContent = "Camera authorized and active!";
-      statusEl.className = "cam-status ok";
+      await videoEl.play();
+
+      // Verify video actually produces real non-empty frames (prevents fake/blocked cameras)
+      await new Promise(resolve => setTimeout(resolve, 400));
+      if (videoEl.videoWidth === 0 || videoEl.videoHeight === 0 || videoTracks[0].readyState !== 'live') {
+        throw new Error("Camera stream is inactive or blocked.");
+      }
+
+      // Start Live Voice / Noise Analyser
+      setupVoiceAnalyser(mediaStream);
+
+      mediaReady = true;
+      statusEl.textContent = "Camera & Microphone verified and active!";
+      statusEl.className = "media-status ok";
       startBtn.disabled = false;
-      startBtn.innerHTML = "Start Timed Quiz Now &rarr;";
-      document.getElementById('btn-enable-cam').textContent = "Camera Ready";
+      startBtn.innerHTML = "بدء الامتحان الآن / Start Secure Exam &rarr;";
+      document.getElementById('btn-enable-media').textContent = "Camera & Mic Active";
     } catch (err) {
-      cameraReady = false;
-      statusEl.textContent = "Camera access denied. You MUST allow camera access to take this exam.";
-      statusEl.className = "cam-status err";
+      mediaReady = false;
+      startBtn.disabled = true;
+      statusEl.textContent = "تعذر تشغيل الكاميرا أو الميكروفون! لا يمكن بدء الامتحان بدون كاميرا وميكروفون شغالين.";
+      statusEl.className = "media-status err";
     }
   }
 
+  function setupVoiceAnalyser(stream) {
+    try {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioContext.createMediaStreamSource(stream);
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+      source.connect(analyser);
+
+      const dataArray = new Uint8Array(analyser.frequencyBinCount);
+      const barFill = document.getElementById('mic-bar-fill');
+      const dbLabel = document.getElementById('mic-db-label');
+      const voicePill = document.getElementById('live-voice-pill');
+
+      clearInterval(micMonitorInterval);
+      micMonitorInterval = setInterval(() => {
+        if (!analyser) return;
+        analyser.getByteFrequencyData(dataArray);
+        let sum = 0;
+        for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+        const avgVolume = sum / dataArray.length; // 0 to ~120
+        const pct = Math.min(100, Math.round((avgVolume / 65) * 100));
+
+        if (barFill) {
+          barFill.style.width = pct + "%";
+          barFill.style.background = avgVolume > 28 ? "#dc2626" : "#16a34a";
+        }
+        if (dbLabel) {
+          dbLabel.textContent = avgVolume > 28 ? "High Sound!" : "Quiet";
+        }
+
+        // During active exam, count distinct voice/noise events (threshold > 28, cooldown 3.5s)
+        if (examActive && !examEnded && avgVolume > 28) {
+          const now = Date.now();
+          if (now - lastVoiceTriggerTime > 3500) {
+            voiceEventCount++;
+            lastVoiceTriggerTime = now;
+            if (voicePill) {
+              voicePill.innerHTML = `&#127908; Voice Events: ${voiceEventCount}`;
+              voicePill.classList.add('loud');
+              setTimeout(() => voicePill.classList.remove('loud'), 1200);
+            }
+          }
+        }
+      }, 250);
+    } catch (e) {
+      console.warn("AudioContext init warning:", e);
+    }
+  }
+
+  // Record a very compact compressed audio clip (low bitrate Opus/WebM) during the exam
+  function startCompressedAudioRecording() {
+    audioChunks = [];
+    compressedAudioBase64 = "";
+    try {
+      const audioOnlyStream = new MediaStream(mediaStream.getAudioTracks());
+      const options = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+        ? { mimeType: 'audio/webm;codecs=opus', audioBitsPerSecond: 12000 }
+        : { audioBitsPerSecond: 12000 };
+      mediaRecorder = new MediaRecorder(audioOnlyStream, options);
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) audioChunks.push(e.data);
+      };
+      mediaRecorder.start(1000);
+    } catch (e) {
+      console.warn("MediaRecorder not supported:", e);
+    }
+  }
+
+  function stopAndEncodeAudio() {
+    return new Promise((resolve) => {
+      if (!mediaRecorder || mediaRecorder.state === "inactive") {
+        resolve("");
+        return;
+      }
+      mediaRecorder.onstop = () => {
+        try {
+          const blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result || "");
+          reader.onerror = () => resolve("");
+          reader.readAsDataURL(blob);
+        } catch (e) {
+          resolve("");
+        }
+      };
+      try {
+        mediaRecorder.stop();
+      } catch (e) {
+        resolve("");
+      }
+    });
+  }
+
   function captureSnapshot(label) {
-    if (!mediaStream || !cameraReady) return;
+    if (!mediaStream || !mediaReady) return;
     const video = document.getElementById('webcam-video');
+    if (video.videoWidth === 0) return;
     const canvas = document.getElementById('snap-canvas');
     const ctx = canvas.getContext('2d');
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    // Compressed JPEG (quality 0.55) so 5 photos upload smoothly to Google Sheets
-    const dataUrl = canvas.toDataURL('image/jpeg', 0.55);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.5);
     capturedPhotos.push({
       label: label,
       time: new Date().toLocaleTimeString(),
@@ -586,18 +794,23 @@
     });
   }
 
-  function stopCamera() {
+  function stopAllMedia() {
+    clearInterval(micMonitorInterval);
+    if (audioContext && audioContext.state !== 'closed') {
+      audioContext.close().catch(() => {});
+    }
     if (mediaStream) {
       mediaStream.getTracks().forEach(track => track.stop());
     }
   }
 
-  // 2. VALIDATE REGISTRATION & ENTER FULL SCREEN
+  // 2. VALIDATE REGISTRATION, LOCAL DUPLICATE CHECK, CONSENT & CAMERA
   async function validateAndStart() {
     const fnEl = document.getElementById('firstName');
     const lnEl = document.getElementById('lastName');
     const idEl = document.getElementById('studentId');
     const grEl = document.getElementById('studentGroup');
+    const agreeEl = document.getElementById('agreeRules');
     const errEl = document.getElementById('form-error');
 
     const firstName = fnEl.value.trim();
@@ -606,57 +819,70 @@
     const group = grEl.value.trim();
 
     [fnEl, lnEl, idEl, grEl].forEach(el => el.classList.remove('input-error'));
+    errEl.style.display = 'none';
 
     let valid = true;
     if (!firstName) { fnEl.classList.add('input-error'); valid = false; }
     if (!lastName) { lnEl.classList.add('input-error'); valid = false; }
-    if (!studentId) { idEl.classList.add('input-error'); valid = false; }
+    if (!studentId || !/^\d{6,16}$/.test(studentId)) { idEl.classList.add('input-error'); valid = false; }
     if (!group) { grEl.classList.add('input-error'); valid = false; }
 
-    if (!valid || !cameraReady) {
+    if (!valid) {
+      errEl.textContent = "يرجى إدخال الاسم، اللقب، رقم التسجيل الصحيح (أرقام فقط مثل 252531214050)، واختيار الفوج.";
       errEl.style.display = 'block';
       return;
     }
 
-    errEl.style.display = 'none';
-    studentInfo = { firstName, lastName, studentId, group };
+    if (!mediaReady || !mediaStream || mediaStream.getVideoTracks()[0].readyState !== 'live') {
+      errEl.textContent = "لا يمكن بدء الامتحان: يجب تفعيل كاميرا وميكروفون شغالين أولاً.";
+      errEl.style.display = 'block';
+      return;
+    }
 
+    if (!agreeEl.checked) {
+      errEl.textContent = "يرجى وضع علامة الموافقة على تعليمات الامتحان قبل البدء.";
+      errEl.style.display = 'block';
+      return;
+    }
+
+    // Prevent immediate retake on same browser with same Student ID
+    const attemptedKey = `exam_done_${studentId}`;
+    if (localStorage.getItem(attemptedKey)) {
+      errEl.textContent = "عذراً: رقم التسجيل هذا قام باجتياز الامتحان مسبقاً ولا يُسمح بالإعادة.";
+      errEl.style.display = 'block';
+      return;
+    }
+
+    studentInfo = { firstName, lastName, studentId, group };
     document.getElementById('display-name').textContent = `${firstName} ${lastName} (${studentId})`;
     document.getElementById('display-group').textContent = group;
 
-    // Request Full Screen immediately on user click
+    // Request mandatory Full Screen
     try {
       const docEl = document.documentElement;
-      if (docEl.requestFullscreen) {
-        await docEl.requestFullscreen();
-      } else if (docEl.webkitRequestFullscreen) {
-        await docEl.webkitRequestFullscreen();
-      }
-    } catch (e) {
-      console.warn("Fullscreen request blocked:", e);
-    }
+      if (docEl.requestFullscreen) await docEl.requestFullscreen();
+      else if (docEl.webkitRequestFullscreen) await docEl.webkitRequestFullscreen();
+    } catch (e) {}
 
     startQuiz();
   }
 
-  // 3. SHUFFLE & START QUIZ + SCHEDULE 4 RANDOM SNAPSHOTS
+  // 3. SHUFFLE OBFUSCATED BANK & START QUIZ
   function getRandomQuestions(count) {
-    const copy = [...questionBank];
-    for (let i = copy.length - 1; i > 0; i--) {
+    const bank = decodeQuestionBank();
+    for (let i = bank.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
+      [bank[i], bank[j]] = [bank[j], bank[i]];
     }
-    return copy.slice(0, count);
+    return bank.slice(0, count);
   }
 
   function scheduleRandomSnapshots() {
     randomPhotoTimers.forEach(t => clearTimeout(t));
     randomPhotoTimers = [];
-    // Pick 4 distinct random seconds between second 10 and second 115
     const chosenSeconds = new Set();
     while (chosenSeconds.size < 4) {
-      const randSec = Math.floor(Math.random() * 105) + 10;
-      chosenSeconds.add(randSec);
+      chosenSeconds.add(Math.floor(Math.random() * 105) + 10);
     }
     Array.from(chosenSeconds).sort((a, b) => a - b).forEach((sec, idx) => {
       const t = setTimeout(() => {
@@ -669,15 +895,22 @@
   }
 
   function startQuiz() {
+    localStorage.setItem(`exam_done_${studentInfo.studentId}`, new Date().toISOString());
+
     capturedPhotos = [];
+    voiceEventCount = 0;
     captureSnapshot("Initial (0s)");
     scheduleRandomSnapshots();
+    startCompressedAudioRecording();
 
     currentQuestions = getRandomQuestions(20);
     currentIndex = 0;
-    score = 0;
+    correctCount = 0;
+    wrongCount = 0;
+    skipCount = 0;
     userAnswers = [];
     timeLeft = 120;
+    examStartTimeMs = Date.now();
     violationCount = 0;
     examActive = true;
     examEnded = false;
@@ -694,12 +927,10 @@
     timerInterval = setInterval(() => {
       timeLeft--;
       updateTimerDisplay();
-      if (timeLeft <= 15) {
-        timerEl.classList.add('warning');
-      }
+      if (timeLeft <= 15) timerEl.classList.add('warning');
       if (timeLeft <= 0) {
         terminationReason = "Time Expired (120s)";
-        endQuiz("Time's Up!");
+        endQuiz("انتهى وقت الامتحان / Time's Up!");
       }
     }, 1000);
 
@@ -722,14 +953,18 @@
   function submitAnswer(choice) {
     if (!examActive || examEnded) return;
     const [qText, correctAns] = currentQuestions[currentIndex];
-    const isCorrect = (choice === correctAns);
-    if (isCorrect) score++;
+
+    if (choice === null) {
+      skipCount++;
+    } else if (choice === correctAns) {
+      correctCount++;
+    } else {
+      wrongCount++;
+    }
 
     userAnswers.push({
       question: qText,
-      chosen: choice,
-      correct: correctAns,
-      isCorrect: isCorrect
+      chosen: choice
     });
 
     currentIndex++;
@@ -737,22 +972,22 @@
       showQuestion();
     } else {
       terminationReason = "Completed All 20 Questions";
-      endQuiz("Exam Complete!");
+      endQuiz("تم إرسال الامتحان بنجاح / Exam Submitted");
     }
   }
 
-  // 4. ANTI-CHEAT: FULL-SCREEN EXIT, TAB SWITCH, COPY/PASTE, RIGHT-CLICK BLOCK
+  // 4. ANTI-CHEAT: FULLSCREEN, VISIBILITY, WINDOW.ONBLUR, COPY/PASTE
   function handleSecurityViolation(reasonText) {
     if (!examActive || examEnded) return;
     violationCount++;
     if (violationCount === 1) {
       document.getElementById('warning-reason').innerHTML =
-        `<strong>Violation Detected:</strong> ${reasonText}.<br><br>You are not allowed to exit full-screen, switch tabs, or copy/paste. <strong>One more violation will immediately close and submit your exam!</strong>`;
+        `<strong>تم رصد مخالفة:</strong> ${reasonText}.<br><br>يُمنع الخروج من وضع ملء الشاشة أو مغادرة نافذة الامتحان أو النسخ واللصق. <strong>في حال تكرار المخالفة سيتم إغلاق الامتحان وإرساله فوراً!</strong>`;
       document.getElementById('warning-modal').classList.remove('hidden');
     } else {
       document.getElementById('warning-modal').classList.add('hidden');
       terminationReason = `Closed due to security violation (${reasonText})`;
-      endQuiz("Exam Closed — Security Violation!");
+      endQuiz("تم إغلاق الامتحان بسبب مخالفة القواعد");
     }
   }
 
@@ -774,7 +1009,13 @@
 
   document.addEventListener('visibilitychange', () => {
     if (examActive && !examEnded && document.hidden) {
-      handleSecurityViolation("Switched Tab or Minimized Browser");
+      handleSecurityViolation("Switched Browser Tab");
+    }
+  });
+
+  window.addEventListener('blur', () => {
+    if (examActive && !examEnded) {
+      handleSecurityViolation("Focus Lost / Opened Another Window");
     }
   });
 
@@ -799,15 +1040,32 @@
     }
   });
 
-  // 5. END EXAM & SEND DATA + PHOTOS TO GOOGLE SHEETS
-  function endQuiz(title) {
+  // 5. END EXAM, COMPUTE NET SCORE (CORRECT - WRONG) & SEND TO GOOGLE SHEET
+  async function endQuiz(title) {
     if (examEnded) return;
     examEnded = true;
     examActive = false;
 
     clearInterval(timerInterval);
     randomPhotoTimers.forEach(t => clearTimeout(t));
-    stopCamera();
+
+    // Calculate elapsed time & speed flag
+    const elapsedSeconds = Math.max(1, Math.round((Date.now() - examStartTimeMs) / 1000));
+    const answeredCount = correctCount + wrongCount;
+    const avgSecPerAnswered = answeredCount > 0 ? (elapsedSeconds / answeredCount).toFixed(1) : elapsedSeconds;
+    let speedFlag = "Normal Pace";
+    if (answeredCount >= 10 && elapsedSeconds < 20) {
+      speedFlag = `SUSPICIOUS FAST CLICKING (${elapsedSeconds}s total, ${avgSecPerAnswered}s/q)`;
+    } else if (answeredCount >= 15 && elapsedSeconds < 35) {
+      speedFlag = `Very Fast (${elapsedSeconds}s total, ${avgSecPerAnswered}s/q)`;
+    }
+
+    // Net Score = Correct - Wrong (floored at 0 if desired, or raw net score; here raw net score is sent)
+    const netScore = correctCount - wrongCount;
+
+    // Finalize compressed audio before stopping media tracks
+    compressedAudioBase64 = await stopAndEncodeAudio();
+    stopAllMedia();
 
     if (document.fullscreenElement && document.exitFullscreen) {
       document.exitFullscreen().catch(() => {});
@@ -819,68 +1077,42 @@
     document.getElementById('result-title').textContent = title;
 
     const submittedAt = new Date().toLocaleString();
+    // Show ONLY confirmation receipt (NO score, NO correct/wrong answers revealed)
     document.getElementById('result-student-info').innerHTML = `
-      <strong>Full Name:</strong> ${studentInfo.firstName} ${studentInfo.lastName}<br>
-      <strong>Student ID:</strong> ${studentInfo.studentId}<br>
-      <strong>Group:</strong> ${studentInfo.group}<br>
-      <strong>Status:</strong> ${terminationReason} (Warnings: ${violationCount})<br>
-      <strong>Submitted:</strong> ${submittedAt}
+      <strong>الاسم الكامل / Full Name:</strong> ${studentInfo.firstName} ${studentInfo.lastName}<br>
+      <strong>رقم التسجيل / Student ID:</strong> ${studentInfo.studentId}<br>
+      <strong>الفوج / Group:</strong> ${studentInfo.group}<br>
+      <strong>الأسئلة المجاب عنها / Questions Viewed:</strong> ${userAnswers.length} / 20<br>
+      <strong>وقت الإرسال / Submitted At:</strong> ${submittedAt}
     `;
 
-    document.getElementById('score').textContent = score;
-    document.getElementById('score-percent').textContent = `${Math.round((score / 20) * 100)}% Score (${userAnswers.length} of 20 answered)`;
-
-    // Render captured photos on receipt
-    const stripEl = document.getElementById('photo-strip');
-    stripEl.innerHTML = capturedPhotos.map(p =>
-      `<div><img src="${p.image}" alt="${p.label}"><div style="font-size:0.7rem;color:#64748b;">${p.label}</div></div>`
-    ).join('');
-
-    while (userAnswers.length < currentQuestions.length) {
-      const [qText, correctAns] = currentQuestions[userAnswers.length];
-      userAnswers.push({
-        question: qText,
-        chosen: null,
-        correct: correctAns,
-        isCorrect: false
-      });
-    }
-
-    const reviewHTML = userAnswers.map((item, i) => {
-      const userText = item.chosen === null ? 'Not answered' : (item.chosen ? 'True' : 'False');
-      return `
-        <div class="review-item ${item.isCorrect ? 'is-correct' : 'is-wrong'}">
-          <strong>${i + 1}. ${item.question}</strong><br>
-          Your answer: <span class="${item.isCorrect ? 'correct' : 'wrong'}">${userText}</span>
-          ${!item.isCorrect ? ` &mdash; Correct answer: <span class="correct">${item.correct ? 'True' : 'False'}</span>` : ''}
-        </div>
-      `;
-    }).join('');
-    document.getElementById('review-list').innerHTML = reviewHTML;
-
-    sendToGoogleSheet(submittedAt);
-  }
-
-  async function sendToGoogleSheet(submittedAt) {
-    const syncEl = document.getElementById('sync-status');
-    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
-      syncEl.textContent = "Google Sheet URL not configured yet (see setup instructions).";
-      syncEl.className = "sync-badge fail";
-      return;
-    }
-
-    const payload = {
+    await sendToGoogleSheet({
       timestamp: submittedAt,
       firstName: studentInfo.firstName,
       lastName: studentInfo.lastName,
       studentId: studentInfo.studentId,
       group: studentInfo.group,
-      score: score,
-      total: 20,
+      netScore: netScore,
+      correctCount: correctCount,
+      wrongCount: wrongCount,
+      skipCount: skipCount,
+      elapsedSeconds: elapsedSeconds,
+      speedFlag: speedFlag,
+      voiceEvents: voiceEventCount,
       status: terminationReason,
       warnings: violationCount,
-      photos: capturedPhotos.map(p => p.image)
-    };
+      photos: capturedPhotos.map(p => p.image),
+      audioClip: compressedAudioBase64
+    });
+  }
+
+  async function sendToGoogleSheet(payload) {
+    const syncEl = document.getElementById('sync-status');
+    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+      syncEl.textContent = "خطأ في الإعداد: لم يتم ربط رابط Google Sheet بعد.";
+      syncEl.className = "sync-badge fail";
+      return;
+    }
 
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
@@ -889,10 +1121,10 @@
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify(payload)
       });
-      syncEl.textContent = "Results & 5 Verification Photos Sent to Google Sheet!";
+      syncEl.textContent = "تم استلام إجاباتك وبيانات التحقق بنجاح!";
       syncEl.className = "sync-badge success";
     } catch (err) {
-      syncEl.textContent = "Network error sending to Google Sheet. Take a screenshot of this page.";
+      syncEl.textContent = "حدث خطأ في الشبكة أثناء الإرسال. يرجى التقاط صورة لهذه الشاشة.";
       syncEl.className = "sync-badge fail";
     }
   }
